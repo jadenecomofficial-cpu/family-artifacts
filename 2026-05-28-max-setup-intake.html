@@ -6,7 +6,7 @@
 <title>Max setup intake</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Outfit:wght@500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;family=Sora:wght@500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Outfit:wght@500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;family=Sora:wght@500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
 <style>
   script, style, head, title, meta, link { display: none !important; }
 
@@ -29,6 +29,7 @@
     --radius-sm: 12px;
     --display-font: "Instrument Serif", "EB Garamond", Georgia, serif;
     --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: var(--body-font);
     --section-gap: 18px;
     --section-padding: 26px;
   }
@@ -62,6 +63,7 @@
     --radius-sm: calc(var(--radius) * 0.66);
     --display-font: "Instrument Serif", "EB Garamond", Georgia, serif;
     --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: var(--body-font);
     --section-gap: 18px;
     --section-padding: 26px;
   }
@@ -98,30 +100,31 @@
   :root.theme-midnight {
     --background: 223 65% 7%;
     --foreground: 213 31% 91%;
-    --card: 223 43% 10%;
-    --primary: 217 91% 60%;
-    --muted: 223 39% 14%;
+    --card: 221 50% 11%;
+    --primary: 217 83% 53%;
+    --muted: 223 44% 15%;
     --muted-foreground: 216 19% 68%;
-    --accent: 231 44% 20%;
-    --border: 221 34% 23%;
-    --ring: 226 70% 55%;
+    --accent: 229 44% 15%;
+    --border: 222 38% 15%;
+    --ring: 231 75% 64%;
     --bg: #060c1c;
-    --bg-accent: rgba(59, 130, 246, 0.1);
-    --panel: #0b1428;
-    --panel-2: #0f1930;
-    --ink: #e7eefb;
-    --ink-soft: #a6b5d0;
-    --muted: #94a3bf;
-    --line: #20304d;
-    --line-strong: #344567;
-    --accent: #3b82f6;
-    --accent-strong: #5c6cff;
-    --accent-soft: rgba(59, 130, 246, 0.12);
-    --focus: rgba(59, 130, 246, 0.22);
-    --shadow: 0 0 0 1px rgba(148, 163, 184, 0.05);
-    --radius: 6px;
+    --bg-accent: rgba(37, 99, 235, 0.08);
+    --panel: #0e162a;
+    --panel-2: #162038;
+    --ink: #ebf0fc;
+    --ink-soft: #c8d2e6;
+    --muted: #8290aa;
+    --line: #182036;
+    --line-strong: #2a3650;
+    --accent: #2563eb;
+    --accent-strong: #6366f1;
+    --accent-soft: rgba(37, 99, 235, 0.14);
+    --focus: rgba(99, 102, 241, 0.22);
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    --radius: 0.375rem;
     --display-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "IBM Plex Mono", "JetBrains Mono", monospace;
     --section-gap: 16px;
     --section-padding: 22px;
   }
@@ -129,30 +132,31 @@
   :root.theme-violet {
     --background: 272 48% 8%;
     --foreground: 267 32% 94%;
-    --card: 271 32% 12%;
-    --primary: 256 100% 68%;
-    --muted: 272 22% 17%;
+    --card: 271 43% 8%;
+    --primary: 271 91% 65%;
+    --muted: 272 22% 14%;
     --muted-foreground: 268 18% 72%;
-    --accent: 270 38% 22%;
-    --border: 269 25% 26%;
-    --ring: 256 100% 68%;
-    --bg: #120a1e;
-    --bg-accent: rgba(124, 92, 255, 0.14);
-    --panel: #1a102a;
-    --panel-2: #221336;
+    --accent: 272 40% 14%;
+    --border: 272 39% 13%;
+    --ring: 273 89% 74%;
+    --bg: #0a0612;
+    --bg-accent: rgba(168, 85, 247, 0.12);
+    --panel: #120c1e;
+    --panel-2: #1c1330;
     --ink: #f1ebff;
-    --ink-soft: #c7b9e8;
-    --muted: #ab9ac7;
-    --line: #34234a;
-    --line-strong: #4a3269;
-    --accent: #7c5cff;
-    --accent-strong: #9b86ff;
-    --accent-soft: rgba(124, 92, 255, 0.16);
-    --focus: rgba(124, 92, 255, 0.34);
-    --shadow: 0 22px 50px rgba(41, 19, 72, 0.44);
+    --ink-soft: #d2c8ea;
+    --muted: #9e94b8;
+    --line: #201632;
+    --line-strong: #324a69;
+    --accent: #a855f7;
+    --accent-strong: #c084fc;
+    --accent-soft: rgba(80, 35, 120, 0.5);
+    --focus: rgba(168, 85, 247, 0.24);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.08);
     --radius: 1.5rem;
     --display-font: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --section-gap: 20px;
     --section-padding: 30px;
   }
@@ -187,61 +191,63 @@
   }
 
   :root.theme-electric {
-    --background: 219 58% 8%;
-    --foreground: 189 30% 93%;
-    --card: 220 44% 12%;
+    --background: 219 69% 5%;
+    --foreground: 210 55% 96%;
+    --card: 219 64% 9%;
     --primary: 187 91% 43%;
-    --muted: 218 35% 15%;
-    --muted-foreground: 194 20% 72%;
-    --accent: 193 50% 18%;
-    --border: 202 35% 22%;
+    --muted: 218 44% 13%;
+    --muted-foreground: 212 29% 69%;
+    --accent: 194 62% 11%;
+    --border: 220 51% 15%;
     --ring: 187 91% 43%;
-    --bg: #08101f;
-    --bg-accent: rgba(6, 182, 212, 0.12);
-    --panel: #0d172c;
-    --panel-2: #0f1d35;
-    --ink: #e7fbff;
-    --ink-soft: #afd5df;
-    --muted: #8cb2bc;
-    --line: #18324b;
-    --line-strong: #235172;
+    --bg: #020816;
+    --bg-accent: rgba(6, 182, 212, 0.08);
+    --panel: #081224;
+    --panel-2: #101c34;
+    --ink: #ebf5ff;
+    --ink-soft: #c8dcf0;
+    --muted: #829ebc;
+    --line: #121e38;
+    --line-strong: #203254;
     --accent: #06b6d4;
-    --accent-strong: #67e8f9;
-    --accent-soft: rgba(6, 182, 212, 0.12);
-    --focus: rgba(34, 211, 238, 0.34);
-    --shadow: 0 0 0 1px rgba(34, 211, 238, 0.12), 0 18px 44px rgba(0, 0, 0, 0.34);
-    --radius: 8px;
-    --display-font: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --accent-strong: #22d3ee;
+    --accent-soft: rgba(12, 38, 50, 0.9);
+    --focus: rgba(34, 211, 238, 0.22);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.55), 0 0 30px rgba(6, 182, 212, 0.1);
+    --radius: 1.25rem;
+    --display-font: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   :root.theme-paper {
     --background: 0 0% 100%;
-    --foreground: 222 23% 17%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --primary: 220 74% 52%;
-    --muted: 220 21% 95%;
+    --primary: 244 75% 59%;
+    --muted: 220 21% 97%;
     --muted-foreground: 215 16% 40%;
     --accent: 220 40% 95%;
     --border: 214 18% 86%;
-    --ring: 220 74% 52%;
+    --ring: 244 75% 59%;
     --bg: #ffffff;
-    --bg-accent: rgba(37, 99, 235, 0.05);
+    --bg-accent: rgba(79, 70, 229, 0.03);
     --panel: #ffffff;
-    --panel-2: #f3f6fb;
-    --ink: #1f2937;
-    --ink-soft: #4b5563;
+    --panel-2: #f8fafc;
+    --ink: #0f172a;
+    --ink-soft: #334155;
     --muted: #64748b;
-    --line: #d8e0eb;
+    --line: #e2e8f0;
     --line-strong: #94a3b8;
-    --accent: #2563eb;
-    --accent-strong: #1d4ed8;
-    --accent-soft: #eff6ff;
-    --focus: rgba(37, 99, 235, 0.18);
-    --shadow: none;
-    --radius: 4px;
+    --accent: #4f46e5;
+    --accent-strong: #4338ca;
+    --accent-soft: #e0e7ff;
+    --focus: rgba(79, 70, 229, 0.16);
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --radius: 0.375rem;
     --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   :root.theme-outlook {
@@ -335,31 +341,32 @@
 
   :root.theme-aurora {
     --background: 225 36% 98%;
-    --foreground: 224 38% 16%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --primary: 267 85% 63%;
-    --muted: 225 30% 94%;
-    --muted-foreground: 216 18% 43%;
-    --accent: 230 64% 96%;
+    --muted: 220 32% 94%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 256 100% 97%;
     --border: 218 29% 90%;
-    --ring: 316 92% 72%;
-    --bg: #f7f8fc;
-    --bg-accent: rgba(129, 140, 248, 0.08);
+    --ring: 343 89% 60%;
+    --bg: #f4f6fc;
+    --bg-accent: rgba(139, 92, 246, 0.06);
     --panel: #ffffff;
-    --panel-2: #f5f7fd;
-    --ink: #1e293b;
-    --ink-soft: #5b6880;
-    --muted: #66758f;
-    --line: #dde4f0;
-    --line-strong: #b9c4d8;
+    --panel-2: #f8fafc;
+    --ink: #111827;
+    --ink-soft: #334155;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --line-strong: #94a3b8;
     --accent: #8b5cf6;
-    --accent-strong: #22d3ee;
-    --accent-soft: #eef2ff;
-    --focus: rgba(34, 211, 238, 0.2);
-    --shadow: 0 18px 46px rgba(125, 145, 190, 0.15);
-    --radius: 0.9rem;
-    --display-font: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --accent-strong: #f43f5e;
+    --accent-soft: #ede9fe;
+    --focus: rgba(244, 63, 94, 0.18);
+    --shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --radius: 0.75rem;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --section-gap: 22px;
     --section-padding: 30px;
   }
@@ -369,28 +376,29 @@
     --foreground: 27 40% 18%;
     --card: 40 100% 98%;
     --primary: 33 90% 45%;
-    --muted: 39 56% 90%;
+    --muted: 39 56% 92%;
     --muted-foreground: 28 22% 37%;
-    --accent: 42 90% 90%;
-    --border: 37 45% 80%;
+    --accent: 42 90% 93%;
+    --border: 37 54% 88%;
     --ring: 33 90% 45%;
-    --bg: #faf3e3;
-    --bg-accent: rgba(217, 119, 6, 0.08);
-    --panel: #fffaf0;
-    --panel-2: #f8eed7;
-    --ink: #7c4a1e;
-    --ink-soft: #8f6239;
-    --muted: #966f49;
-    --line: #dfc8a6;
-    --line-strong: #c59a69;
+    --bg: #fef7ea;
+    --bg-accent: rgba(217, 119, 6, 0.06);
+    --panel: #fffcf4;
+    --panel-2: #fdf4df;
+    --ink: #291c12;
+    --ink-soft: #463224;
+    --muted: #786450;
+    --line: #f5e4c8;
+    --line-strong: #c3a27d;
     --accent: #d97706;
-    --accent-strong: #b85f00;
-    --accent-soft: #fff0d8;
-    --focus: rgba(217, 119, 6, 0.16);
-    --shadow: 0 8px 18px rgba(124, 74, 30, 0.06);
-    --radius: 10px;
-    --display-font: "EB Garamond", Georgia, serif;
-    --body-font: "EB Garamond", Georgia, serif;
+    --accent-strong: #ea580c;
+    --accent-soft: #fef3c7;
+    --focus: rgba(217, 119, 6, 0.14);
+    --shadow: 0 2px 6px rgba(120, 70, 30, 0.06);
+    --radius: 1rem;
+    --display-font: "Fraunces", Georgia, serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --numeric-font: "Fraunces", Georgia, serif;
     --section-gap: 20px;
     --section-padding: 28px;
   }
@@ -1330,7 +1338,7 @@
   :root.theme-midnight .section-kicker {
     font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
   }
 
   :root.theme-midnight .hero-card,
@@ -1341,9 +1349,24 @@
   :root.theme-midnight .hero-note,
   :root.theme-midnight .repeater-row,
   :root.theme-midnight .savebar {
-    border-radius: 6px;
-    border: 1px solid #20304d;
-    box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.04);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    border: 1px solid #182036;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  }
+
+  :root.theme-midnight .hero-card::before,
+  :root.theme-midnight .section::before,
+  :root.theme-midnight .modal::before,
+  :root.theme-midnight .savebar::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: #2563eb;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.55);
+    pointer-events: none;
   }
 
   :root.theme-midnight input[type="text"],
@@ -1351,23 +1374,39 @@
   :root.theme-midnight input[type="date"],
   :root.theme-midnight input[type="time"],
   :root.theme-midnight textarea,
+  :root.theme-midnight select,
   :root.theme-midnight .button,
   :root.theme-midnight .icon-button,
   :root.theme-midnight .pill-stack .pill-label,
   :root.theme-midnight .theme-radio-stack .pill-label,
   :root.theme-midnight .save-chip,
   :root.theme-midnight .progress-chip {
-    border-radius: 6px;
-    border: 1px solid #2b3b5a;
+    border-radius: 0.25rem;
+    border: 1px solid #2a3650;
     box-shadow: none;
+  }
+
+  :root.theme-midnight .save-chip strong,
+  :root.theme-midnight .progress-chip strong,
+  :root.theme-midnight input[type="number"],
+  :root.theme-midnight input[type="date"],
+  :root.theme-midnight input[type="time"] {
+    font-family: var(--numeric-font);
+    font-variant-numeric: tabular-nums;
+  }
+
+  :root.theme-midnight .button.primary,
+  :root.theme-midnight .pill-stack input:checked + .pill-label,
+  :root.theme-midnight .theme-radio-stack input:checked + .pill-label {
+    border-color: #2563eb;
   }
 
   :root.theme-violet h1,
   :root.theme-violet h2,
   :root.theme-violet h3 {
     font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   :root.theme-violet .hero-card,
@@ -1388,24 +1427,35 @@
   :root.theme-violet input[type="number"],
   :root.theme-violet input[type="date"],
   :root.theme-violet input[type="time"],
-  :root.theme-violet textarea {
+  :root.theme-violet textarea,
+  :root.theme-violet select {
     border-radius: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.08);
+  }
+
+  :root.theme-violet .button.primary,
+  :root.theme-violet .pill-stack input:checked + .pill-label,
+  :root.theme-violet .theme-radio-stack input:checked + .pill-label {
+    background: linear-gradient(90deg, #a855f7 0%, #d946ef 100%);
+    border-color: transparent;
+    color: #ffffff;
   }
 
   :root.theme-violet .pill-stack input:checked + .pill-label,
   :root.theme-violet .theme-radio-stack input:checked + .pill-label,
   :root.theme-violet input:focus,
   :root.theme-violet textarea:focus,
+  :root.theme-violet select:focus,
   :root.theme-violet .button:focus-visible,
   :root.theme-violet .icon-button:focus-visible {
-    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.2), 0 0 32px rgba(124, 92, 255, 0.32);
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.18), 0 0 32px rgba(168, 85, 247, 0.28);
   }
 
   :root.theme-electric body {
     background:
-      radial-gradient(900px circle at 18% 0%, rgba(6, 182, 212, 0.22), transparent 42%),
-      radial-gradient(720px circle at 100% 100%, rgba(34, 211, 238, 0.16), transparent 48%),
-      linear-gradient(180deg, #08101f, #08101f);
+      radial-gradient(900px circle at 0% 0%, rgba(6, 182, 212, 0.1), transparent 55%),
+      radial-gradient(800px circle at 100% 100%, rgba(34, 211, 238, 0.08), transparent 60%),
+      linear-gradient(180deg, #020816, #020816);
     background-attachment: fixed;
     font-variant-numeric: tabular-nums;
   }
@@ -1413,9 +1463,9 @@
   :root.theme-electric h1,
   :root.theme-electric h2,
   :root.theme-electric h3 {
-    font-family: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 600;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
   }
 
   :root.theme-electric .hero-card,
@@ -1436,17 +1486,35 @@
   :root.theme-electric input[type="number"],
   :root.theme-electric input[type="date"],
   :root.theme-electric input[type="time"],
-  :root.theme-electric textarea {
-    border-radius: 8px;
+  :root.theme-electric textarea,
+  :root.theme-electric select {
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55), 0 0 30px rgba(6, 182, 212, 0.1);
+  }
+
+  :root.theme-electric .button.primary,
+  :root.theme-electric .pill-stack input:checked + .pill-label,
+  :root.theme-electric .theme-radio-stack input:checked + .pill-label {
+    background: linear-gradient(90deg, #06b6d4 0%, #22d3ee 100%);
+    border-color: transparent;
+    color: #03131a;
   }
 
   :root.theme-electric .pill-stack input:checked + .pill-label,
   :root.theme-electric .theme-radio-stack input:checked + .pill-label,
   :root.theme-electric input:focus,
   :root.theme-electric textarea:focus,
+  :root.theme-electric select:focus,
   :root.theme-electric .button:focus-visible,
   :root.theme-electric .icon-button:focus-visible {
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2), 0 0 20px rgba(34, 211, 238, 0.42);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18), 0 0 24px rgba(34, 211, 238, 0.34);
+  }
+
+  :root.theme-paper h1,
+  :root.theme-paper h2,
+  :root.theme-paper h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   :root.theme-paper .hero-card,
@@ -1456,7 +1524,6 @@
   :root.theme-paper .toast,
   :root.theme-paper .hero-note,
   :root.theme-paper .repeater-row,
-  :root.theme-paper .savebar,
   :root.theme-paper .button,
   :root.theme-paper .icon-button,
   :root.theme-paper .pill-stack .pill-label,
@@ -1467,16 +1534,25 @@
   :root.theme-paper input[type="number"],
   :root.theme-paper input[type="date"],
   :root.theme-paper input[type="time"],
-  :root.theme-paper textarea {
-    border-radius: 4px;
-    box-shadow: none;
+  :root.theme-paper textarea,
+  :root.theme-paper select {
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   }
 
-  :root.theme-paper h1,
-  :root.theme-paper h2,
-  :root.theme-paper h3 {
-    font-weight: 700;
-    letter-spacing: -0.04em;
+  :root.theme-paper .pill-stack .pill-label,
+  :root.theme-paper .theme-radio-stack .pill-label,
+  :root.theme-paper .button,
+  :root.theme-paper .icon-button,
+  :root.theme-paper .save-chip,
+  :root.theme-paper .progress-chip,
+  :root.theme-paper input[type="text"],
+  :root.theme-paper input[type="number"],
+  :root.theme-paper input[type="date"],
+  :root.theme-paper input[type="time"],
+  :root.theme-paper textarea,
+  :root.theme-paper select {
+    border-radius: 0.25rem;
   }
 
   :root.theme-paper .hero-card,
@@ -1486,7 +1562,26 @@
   }
 
   :root.theme-paper .savebar {
-    background: #f8fafc;
+    background: #0f172a;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+  }
+
+  :root.theme-paper .savebar .save-chip,
+  :root.theme-paper .savebar .progress-chip,
+  :root.theme-paper .savebar .theme-trigger,
+  :root.theme-paper .savebar .button,
+  :root.theme-paper .savebar .icon-button {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #f8fafc;
+    box-shadow: none;
+  }
+
+  :root.theme-paper .savebar .save-chip span,
+  :root.theme-paper .savebar .progress-chip strong,
+  :root.theme-paper .savebar .theme-trigger-caret {
+    color: #e2e8f0;
   }
 
   :root.theme-paper .hero-note,
@@ -1495,19 +1590,28 @@
   }
 
   :root.theme-paper .button.primary {
+    background: #4f46e5;
+    border-color: #4f46e5;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
   }
 
+  :root.theme-paper .pill-stack input:checked + .pill-label,
+  :root.theme-paper .theme-radio-stack input:checked + .pill-label {
+    border-color: #4f46e5;
+    background: #e0e7ff;
+    box-shadow: none;
+  }
+
   :root.theme-solar body {
-    line-height: 1.75;
+    line-height: 1.7;
   }
 
   :root.theme-solar h1,
   :root.theme-solar h2,
   :root.theme-solar h3 {
-    font-family: "EB Garamond", Georgia, serif;
+    font-family: "Fraunces", Georgia, serif;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   :root.theme-solar .hero-card,
@@ -1518,8 +1622,30 @@
   :root.theme-solar .hero-note,
   :root.theme-solar .repeater-row,
   :root.theme-solar .savebar {
-    border-radius: 10px;
-    box-shadow: 0 8px 18px rgba(124, 74, 30, 0.06);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(120, 70, 30, 0.06);
+  }
+
+  :root.theme-solar .hero-card::before,
+  :root.theme-solar .section::before,
+  :root.theme-solar .modal::before,
+  :root.theme-solar .savebar::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b 0%, #ea580c 55%, #dc2626 100%);
+    pointer-events: none;
+  }
+
+  :root.theme-solar .button.primary,
+  :root.theme-solar .pill-stack input:checked + .pill-label,
+  :root.theme-solar .theme-radio-stack input:checked + .pill-label {
+    background: linear-gradient(90deg, #d97706 0%, #ea580c 65%, #dc2626 100%);
+    border-color: transparent;
+    color: #fffaf5;
   }
 
   :root.theme-solar .section {
@@ -1531,7 +1657,7 @@
   :root.theme-solar .row-2 + .row-2,
   :root.theme-solar .row-3 + .row-3 {
     padding-top: 12px;
-    border-top: 1px solid rgba(197, 154, 105, 0.45);
+    border-top: 1px solid rgba(195, 160, 120, 0.45);
   }
 
   :root.theme-solar .hero-copy p:first-of-type::first-letter {
@@ -1544,11 +1670,14 @@
 
   :root.theme-aurora h1,
   :root.theme-aurora h2,
-  :root.theme-aurora h3 {
-    font-family: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  :root.theme-aurora h3,
+  :root.theme-aurora .button.primary span,
+  :root.theme-aurora .pill-stack input:checked + .pill-label .pill-copy,
+  :root.theme-aurora .theme-radio-stack input:checked + .pill-label .pill-copy {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 700;
-    letter-spacing: -0.04em;
-    background: linear-gradient(90deg, #8b5cf6 0%, #22d3ee 52%, #f472b6 100%);
+    letter-spacing: -0.025em;
+    background: linear-gradient(90deg, #8b5cf6 0%, #f43f5e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1562,17 +1691,24 @@
   :root.theme-aurora .hero-note,
   :root.theme-aurora .repeater-row,
   :root.theme-aurora .savebar {
-    border-radius: 0.9rem;
-    box-shadow: 0 18px 46px rgba(125, 145, 190, 0.15);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   }
 
   :root.theme-aurora .button.primary,
   :root.theme-aurora .pill-stack input:checked + .pill-label,
   :root.theme-aurora .theme-radio-stack input:checked + .pill-label,
   :root.theme-aurora .theme-menu-option[aria-checked="true"] {
-    background: linear-gradient(90deg, #8b5cf6 0%, #22d3ee 52%, #f472b6 100%);
+    background: linear-gradient(90deg, #8b5cf6 0%, #f43f5e 100%);
     border-color: transparent;
     color: #ffffff;
+  }
+
+  :root.theme-aurora .pill-stack input:checked + .pill-label .pill-check,
+  :root.theme-aurora .theme-radio-stack input:checked + .pill-label .pill-check {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.16);
   }
 
   :root.theme-aurora .app,
