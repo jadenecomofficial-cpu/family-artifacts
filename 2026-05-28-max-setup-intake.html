@@ -1172,8 +1172,8 @@
 
   .section h2 {
     color: var(--ink);
-    border-left: 3px solid var(--accent-strong);
-    padding-left: 12px;
+    border-left: 4px solid var(--accent-strong);
+    padding-left: 13px;
   }
 
   .field label,
@@ -1214,8 +1214,17 @@
   .pill-stack input:checked + .pill-label,
   .theme-radio-stack input:checked + .pill-label {
     border-color: var(--accent);
-    background: var(--accent-soft);
-    color: var(--ink);
+    border-width: 1.5px;
+    background: color-mix(in srgb, var(--accent) 14%, var(--panel));
+    color: var(--accent-strong);
+    font-weight: 600;
+  }
+
+  /* keep secondary descriptions legible (muted), not accent-on-accent */
+  .pill-stack input:checked + .pill-label .pill-copy small,
+  .theme-radio-stack input:checked + .pill-label .pill-copy small {
+    color: var(--ink-soft);
+    font-weight: 400;
   }
 
   .pill-check {
@@ -2084,8 +2093,14 @@
   :root.theme-midnight .section-kicker,
   :root.theme-midnight .section-kicker strong,
   :root.theme-midnight .progress-chip strong,
+  :root.theme-midnight .pill-stack input:checked + .pill-label,
+  :root.theme-midnight .theme-radio-stack input:checked + .pill-label,
   :root.theme-midnight a {
     color: #60a5fa;
+  }
+  :root.theme-sage .pill-stack input:checked + .pill-label,
+  :root.theme-sage .theme-radio-stack input:checked + .pill-label {
+    color: #46604a;
   }
   :root.theme-aurora .eyebrow,
   :root.theme-aurora .section-kicker,
@@ -2147,7 +2162,7 @@
     <header class="hero">
       <div class="hero-card">
         <div class="eyebrow">Setup Intake</div>
-        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v7 (safari menu fix 2)</div>
+        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v8 (prominent selected-state accent)</div>
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>Max’s dashboard + Claude setup, before the call.</h1>
