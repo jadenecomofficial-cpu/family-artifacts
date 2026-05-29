@@ -2083,13 +2083,8 @@
      Exceptions, matching the live home base: */
   :root.theme-midnight h1 { color: var(--ink); }   /* canonical midnight: white */
   :root.theme-glass h1 { color: var(--ink); }       /* canonical glass: white + glow */
-  :root.theme-paper h1 {                             /* canonical paper: indigo->rose gradient */
-    background: linear-gradient(90deg, #4f46e5, #f43f5e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
+  :root.theme-obsidian h1 { color: #dc2626; }       /* deep crimson (canonical Home Base h1 starts here); was pastel #ef4444 */
+  :root.theme-paper h1 { color: #4f46e5; }           /* SOLID indigo — mono/flat, distinct from aurora's rainbow gradient */
 </style>
 </head>
 <body>
@@ -2116,7 +2111,7 @@
     <header class="hero">
       <div class="hero-card">
         <div class="eyebrow">Setup Intake</div>
-        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v9 (canonical h1 + minimal lines)</div>
+        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v10 (deep obsidian red; 11 themes)</div>
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>Max’s Intake Form</h1>
@@ -2170,7 +2165,6 @@
     { id: "electric", label: "Electric", swatch: ["#020816", "#06b6d4", "#22d3ee"] },
     { id: "paper", label: "Paper", swatch: ["#ffffff", "#4f46e5", "#0f172a"] },
     { id: "solar", label: "Solar", swatch: ["#fff6e8", "#a56404", "#352314"] },
-    { id: "aurora", label: "Aurora", swatch: ["#f3f5fc", "#6843b4", "#1a2440"] },
     { id: "excel", label: "Excel", swatch: ["#f4faf7", "#187244", "#1e3027"] },
     { id: "outlook", label: "Outlook", swatch: ["#f3f8fb", "#0f68b3", "#223247"] },
     { id: "sunset", label: "Sunset", swatch: ["#24182b", "#f67f2f", "#f0e6dd"] }
