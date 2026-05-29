@@ -2105,6 +2105,18 @@
   :root.theme-solar a {
     color: #c2410c;
   }
+
+  /* Build stamp — tiny version marker under the hero eyebrow so the live
+     version is unambiguous (no stamp visible = a cached/old copy). */
+  .build-stamp {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    opacity: 0.75;
+    font-family: var(--body-font);
+  }
 </style>
 </head>
 <body>
@@ -2131,6 +2143,7 @@
     <header class="hero">
       <div class="hero-card">
         <div class="eyebrow">Setup Intake</div>
+        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v6 (safari menu fix)</div>
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>Max’s dashboard + Claude setup, before the call.</h1>
@@ -2861,17 +2874,25 @@
   function positionThemeMenu(anchor) {
     const menu = document.getElementById("themeMenu");
     const rect = anchor.getBoundingClientRect();
-    const width = Math.min(Math.max(rect.width, 240), window.innerWidth - 24);
-    const left = Math.min(rect.left, window.innerWidth - width - 12);
-    let top = rect.bottom + 8;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const width = Math.min(Math.max(rect.width, 240), vw - 24);
     menu.style.width = width + "px";
-    menu.style.left = Math.max(12, left) + "px";
-    menu.style.top = top + "px";
     const menuHeight = menu.offsetHeight;
-    if (top + menuHeight > window.innerHeight - 12) {
-      top = Math.max(12, rect.top - menuHeight - 8);
-      menu.style.top = top + "px";
+    // Preferred: just below the anchor.
+    let top = rect.bottom + 8;
+    // Flip above only if it overflows the bottom AND there's room above.
+    if (top + menuHeight > vh - 12 && rect.top - menuHeight - 8 >= 12) {
+      top = rect.top - menuHeight - 8;
     }
+    // FINAL on-screen clamp. The scroll listener re-runs this on every scroll;
+    // without clamping, a scrolled-away anchor (negative rect) pushed top to
+    // -968px in WebKit/Safari and the menu became unclickable ("theme button
+    // unusable"). Pin the menu fully inside the viewport no matter where the
+    // anchor is.
+    top = Math.max(12, Math.min(top, vh - menuHeight - 12));
+    const left = Math.max(12, Math.min(rect.left, vw - width - 12));
+    menu.style.top = top + "px";
+    menu.style.left = left + "px";
   }
 
   function openThemeMenu(anchor) {
