@@ -580,7 +580,7 @@
 
   .theme-menu {
     position: fixed;
-    z-index: 75;
+    z-index: 95;
     display: none;
     width: min(340px, calc(100vw - 24px));
     max-height: min(72vh, 540px);
@@ -1920,12 +1920,12 @@
   const THEME_KEY = "max-setup-intake-theme-2026-05-28";
   const THEME_REGISTRY = [
     { id: "sage", label: "Sage", swatch: ["#f5f1e8", "#6f8d72", "#243028"] },
-    { id: "glass", label: "Glass", swatch: ["linear-gradient(135deg, #16223b, #292044)", "#38baeb", "#edf1f7"] },
-    { id: "obsidian", label: "Obsidian", swatch: ["#080808", "#dc2c2c", "#f2f2f4"] },
-    { id: "midnight", label: "Midnight", swatch: ["#142035", "#256ee7", "#e4eaf0"] },
-    { id: "violet", label: "Violet", swatch: ["#16101a", "#7046cf", "#ebe6ef"] },
-    { id: "electric", label: "Electric", swatch: ["#0d162d", "#0fe0e8", "#e5eef0"] },
-    { id: "paper", label: "Paper", swatch: ["#f8fafc", "#2c5fb2", "#202d3a"] },
+    { id: "glass", label: "Glass", swatch: ["linear-gradient(135deg, #0a0e1a, #2a1a4a)", "#a855f7", "#ec4899"] },
+    { id: "obsidian", label: "Obsidian", swatch: ["#080808", "#ef4444", "#f2f2f4"] },
+    { id: "midnight", label: "Midnight", swatch: ["#060c1c", "#2563eb", "#e4eaf0"] },
+    { id: "violet", label: "Violet", swatch: ["#0a0612", "#a855f7", "#c084fc"] },
+    { id: "electric", label: "Electric", swatch: ["#020816", "#06b6d4", "#22d3ee"] },
+    { id: "paper", label: "Paper", swatch: ["#ffffff", "#4f46e5", "#0f172a"] },
     { id: "solar", label: "Solar", swatch: ["#fff6e8", "#a56404", "#352314"] },
     { id: "aurora", label: "Aurora", swatch: ["#f3f5fc", "#6843b4", "#1a2440"] },
     { id: "excel", label: "Excel", swatch: ["#f4faf7", "#187244", "#1e3027"] },
@@ -2796,7 +2796,7 @@
         ),
         el("span", { class: "theme-trigger-caret", "aria-hidden": "true", text: "▾" })
       );
-      button.addEventListener("click", () => openThemeMenu(button));
+      button.addEventListener("click", (e) => { e.stopPropagation(); openThemeMenu(button); });
       fieldset.appendChild(button);
       wrap.appendChild(fieldset);
       return wrap;
@@ -3272,7 +3272,7 @@
     renderThemeMenu();
     applyTheme(loadTheme(), { persistDraft: false });
     renderAll();
-    document.getElementById("savebarThemeButton").addEventListener("click", function () { openThemeMenu(this); });
+    document.getElementById("savebarThemeButton").addEventListener("click", function (e) { e.stopPropagation(); openThemeMenu(this); });
     document.addEventListener("click", (event) => {
       const menu = document.getElementById("themeMenu");
       if (!menu.classList.contains("show")) return;
