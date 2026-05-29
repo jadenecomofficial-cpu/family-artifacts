@@ -1566,8 +1566,6 @@
   :root.theme-midnight .hero-card,
   :root.theme-midnight .section,
   :root.theme-midnight .modal,
-  :root.theme-midnight .theme-menu,
-  :root.theme-midnight .toast,
   :root.theme-midnight .hero-note,
   :root.theme-midnight .repeater-row,
   :root.theme-midnight .savebar {
@@ -1839,8 +1837,6 @@
   :root.theme-solar .hero-card,
   :root.theme-solar .section,
   :root.theme-solar .modal,
-  :root.theme-solar .theme-menu,
-  :root.theme-solar .toast,
   :root.theme-solar .hero-note,
   :root.theme-solar .repeater-row,
   :root.theme-solar .savebar {
@@ -2117,6 +2113,14 @@
     opacity: 0.75;
     font-family: var(--body-font);
   }
+
+  /* GUARD (load-bearing): the theme menu is a JS-positioned fixed overlay.
+     No per-theme rule may change its position — the midnight + solar blocks
+     swept it into `position: relative` (for their ::before strips), which made
+     `top` resolve against its in-flow spot at the document bottom, rendering the
+     menu ~13000px off-screen in Safari → "theme button stops working after the
+     4th theme." This invariant prevents any recurrence. */
+  .theme-menu { position: fixed !important; }
 </style>
 </head>
 <body>
@@ -2143,7 +2147,7 @@
     <header class="hero">
       <div class="hero-card">
         <div class="eyebrow">Setup Intake</div>
-        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v6 (safari menu fix)</div>
+        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v7 (safari menu fix 2)</div>
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>Max’s dashboard + Claude setup, before the call.</h1>
