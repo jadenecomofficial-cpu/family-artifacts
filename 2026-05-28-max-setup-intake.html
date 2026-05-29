@@ -6,7 +6,7 @@
 <title>Max setup intake</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Outfit:wght@500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;family=Sora:wght@500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
 <style>
   script, style, head, title, meta, link { display: none !important; }
 
@@ -41,12 +41,10 @@
   :root.theme-paper,
   :root.theme-outlook,
   :root.theme-excel,
-  :root.theme-quickbooks,
   :root.theme-obsidian,
   :root.theme-aurora,
   :root.theme-solar,
-  :root.theme-sunset,
-  :root.theme-ember {
+  :root.theme-sunset {
     --bg: hsl(var(--background));
     --bg-accent: hsl(var(--primary) / 0.08);
     --panel: hsl(var(--card));
@@ -69,216 +67,361 @@
   }
 
   :root.theme-sage {
-    --background: 42 31% 94%;
-    --foreground: 146 15% 14%;
-    --card: 0 0% 100%;
-    --primary: 124 14% 42%;
-    --muted: 91 21% 93%;
-    --muted-foreground: 154 7% 39%;
-    --accent: 207 18% 90%;
-    --border: 47 18% 80%;
+    --background: 41 32% 93%;
+    --foreground: 144 14% 16%;
+    --card: 40 45% 98%;
+    --primary: 124 14% 50%;
+    --muted: 42 29% 91%;
+    --muted-foreground: 146 9% 38%;
+    --accent: 114 20% 92%;
+    --border: 42 18% 80%;
     --ring: 124 14% 42%;
-    --radius: 18px;
+    --bg: #f5f1e8;
+    --bg-accent: rgba(111, 141, 114, 0.08);
+    --panel: #fffdf9;
+    --panel-2: #f7f2e8;
+    --ink: #243028;
+    --ink-soft: #4d5a52;
+    --muted: #6f7b74;
+    --line: #ddd6ca;
+    --line-strong: #c9bfaf;
+    --accent: #6f8d72;
+    --accent-strong: #5d765f;
+    --accent-soft: #e8efe8;
+    --focus: rgba(79, 108, 85, 0.24);
+    --shadow: 0 12px 28px rgba(48, 54, 45, 0.08);
+    --radius: 14px;
+    --display-font: "Instrument Serif", "EB Garamond", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   :root.theme-midnight {
-    --background: 222 47% 11%;
+    --background: 223 65% 7%;
     --foreground: 213 31% 91%;
-    --card: 222 41% 15%;
-    --primary: 214 84% 46%;
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 22% 70%;
-    --accent: 217 33% 24%;
-    --border: 217 30% 26%;
-    --ring: 214 84% 56%;
-    --radius: 16px;
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --section-gap: 20px;
-    --section-padding: 24px;
+    --card: 223 43% 10%;
+    --primary: 217 91% 60%;
+    --muted: 223 39% 14%;
+    --muted-foreground: 216 19% 68%;
+    --accent: 231 44% 20%;
+    --border: 221 34% 23%;
+    --ring: 226 70% 55%;
+    --bg: #060c1c;
+    --bg-accent: rgba(59, 130, 246, 0.1);
+    --panel: #0b1428;
+    --panel-2: #0f1930;
+    --ink: #e7eefb;
+    --ink-soft: #a6b5d0;
+    --muted: #94a3bf;
+    --line: #20304d;
+    --line-strong: #344567;
+    --accent: #3b82f6;
+    --accent-strong: #5c6cff;
+    --accent-soft: rgba(59, 130, 246, 0.12);
+    --focus: rgba(59, 130, 246, 0.22);
+    --shadow: 0 0 0 1px rgba(148, 163, 184, 0.05);
+    --radius: 6px;
+    --display-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 16px;
+    --section-padding: 22px;
   }
 
   :root.theme-violet {
-    --background: 270 24% 8%;
-    --foreground: 270 18% 92%;
-    --card: 271 22% 12%;
-    --primary: 263 60% 52%;
-    --muted: 270 18% 16%;
-    --muted-foreground: 268 16% 70%;
-    --accent: 270 24% 22%;
-    --border: 270 18% 24%;
-    --ring: 263 65% 62%;
-    --radius: 16px;
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.32);
+    --background: 272 48% 8%;
+    --foreground: 267 32% 94%;
+    --card: 271 32% 12%;
+    --primary: 256 100% 68%;
+    --muted: 272 22% 17%;
+    --muted-foreground: 268 18% 72%;
+    --accent: 270 38% 22%;
+    --border: 269 25% 26%;
+    --ring: 256 100% 68%;
+    --bg: #120a1e;
+    --bg-accent: rgba(124, 92, 255, 0.14);
+    --panel: #1a102a;
+    --panel-2: #221336;
+    --ink: #f1ebff;
+    --ink-soft: #c7b9e8;
+    --muted: #ab9ac7;
+    --line: #34234a;
+    --line-strong: #4a3269;
+    --accent: #7c5cff;
+    --accent-strong: #9b86ff;
+    --accent-soft: rgba(124, 92, 255, 0.16);
+    --focus: rgba(124, 92, 255, 0.34);
+    --shadow: 0 22px 50px rgba(41, 19, 72, 0.44);
+    --radius: 1.5rem;
+    --display-font: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 20px;
+    --section-padding: 30px;
   }
 
   :root.theme-glass {
-    --background: 222 47% 10%;
-    --foreground: 210 30% 93%;
-    --card: 215 35% 22%;
-    --primary: 199 89% 55%;
-    --muted: 215 28% 20%;
-    --muted-foreground: 210 22% 74%;
-    --accent: 210 32% 30%;
-    --border: 210 30% 60%;
-    --ring: 199 89% 60%;
+    --background: 225 54% 5%;
+    --foreground: 240 38% 96%;
+    --card: 225 43% 12%;
+    --primary: 272 91% 65%;
+    --muted: 227 31% 15%;
+    --muted-foreground: 228 21% 74%;
+    --accent: 323 81% 60%;
+    --border: 223 24% 24%;
+    --ring: 235 89% 74%;
     --radius: 16px;
-    --bg-accent: linear-gradient(135deg, hsl(199 89% 55% / 0.12), hsl(270 70% 60% / 0.08));
-    --panel: hsl(var(--card) / 0.7);
-    --panel-2: hsl(var(--muted) / 0.75);
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+    --bg: #060a14;
+    --bg-accent: rgba(168, 85, 247, 0.14);
+    --panel: rgba(255, 255, 255, 0.03);
+    --panel-2: rgba(255, 255, 255, 0.04);
+    --ink: #f0f0fa;
+    --ink-soft: #d0d5ec;
+    --muted: #9ba5be;
+    --line: rgba(255, 255, 255, 0.06);
+    --line-strong: rgba(255, 255, 255, 0.1);
+    --accent: #a855f7;
+    --accent-strong: #ec4899;
+    --accent-soft: rgba(168, 85, 247, 0.12);
+    --focus: rgba(129, 140, 248, 0.28);
+    --shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+    --display-font: "Fraunces", Georgia, serif;
+    --body-font: "Manrope", "Inter", system-ui, sans-serif;
   }
 
   :root.theme-electric {
-    --background: 224 60% 8%;
-    --foreground: 185 22% 92%;
-    --card: 222 47% 13%;
-    --primary: 187 90% 48%;
-    --muted: 213 35% 16%;
-    --muted-foreground: 195 20% 70%;
-    --accent: 190 40% 22%;
-    --border: 207 33% 24%;
-    --ring: 187 90% 55%;
-    --radius: 16px;
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --background: 219 58% 8%;
+    --foreground: 189 30% 93%;
+    --card: 220 44% 12%;
+    --primary: 187 91% 43%;
+    --muted: 218 35% 15%;
+    --muted-foreground: 194 20% 72%;
+    --accent: 193 50% 18%;
+    --border: 202 35% 22%;
+    --ring: 187 91% 43%;
+    --bg: #08101f;
+    --bg-accent: rgba(6, 182, 212, 0.12);
+    --panel: #0d172c;
+    --panel-2: #0f1d35;
+    --ink: #e7fbff;
+    --ink-soft: #afd5df;
+    --muted: #8cb2bc;
+    --line: #18324b;
+    --line-strong: #235172;
+    --accent: #06b6d4;
+    --accent-strong: #67e8f9;
+    --accent-soft: rgba(6, 182, 212, 0.12);
+    --focus: rgba(34, 211, 238, 0.34);
+    --shadow: 0 0 0 1px rgba(34, 211, 238, 0.12), 0 18px 44px rgba(0, 0, 0, 0.34);
+    --radius: 8px;
+    --display-font: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   :root.theme-paper {
-    --background: 210 20% 98%;
-    --foreground: 215 28% 17%;
+    --background: 0 0% 100%;
+    --foreground: 222 23% 17%;
     --card: 0 0% 100%;
-    --primary: 215 65% 42%;
-    --muted: 210 20% 94%;
-    --muted-foreground: 215 16% 42%;
-    --accent: 210 30% 92%;
-    --border: 214 20% 86%;
-    --ring: 215 65% 42%;
-    --radius: 18px;
+    --primary: 220 74% 52%;
+    --muted: 220 21% 95%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 220 40% 95%;
+    --border: 214 18% 86%;
+    --ring: 220 74% 52%;
+    --bg: #ffffff;
+    --bg-accent: rgba(37, 99, 235, 0.05);
+    --panel: #ffffff;
+    --panel-2: #f3f6fb;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --muted: #64748b;
+    --line: #d8e0eb;
+    --line-strong: #94a3b8;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --focus: rgba(37, 99, 235, 0.18);
+    --shadow: none;
+    --radius: 4px;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   :root.theme-outlook {
-    --background: 206 33% 97%;
-    --foreground: 215 30% 18%;
+    --background: 210 42% 97%;
+    --foreground: 213 34% 21%;
     --card: 0 0% 100%;
-    --primary: 209 85% 38%;
-    --muted: 210 30% 94%;
-    --muted-foreground: 213 18% 40%;
-    --accent: 209 70% 91%;
-    --border: 210 25% 86%;
-    --ring: 209 85% 45%;
-    --radius: 14px;
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --primary: 208 90% 40%;
+    --muted: 210 33% 94%;
+    --muted-foreground: 212 18% 41%;
+    --accent: 208 86% 94%;
+    --border: 210 29% 85%;
+    --ring: 208 90% 40%;
+    --bg: #f3f7fb;
+    --bg-accent: rgba(10, 102, 194, 0.05);
+    --panel: #ffffff;
+    --panel-2: #edf4fb;
+    --ink: #233548;
+    --ink-soft: #526477;
+    --muted: #607487;
+    --line: #cbd9e6;
+    --line-strong: #99b3cd;
+    --accent: #0a66c2;
+    --accent-strong: #0856a3;
+    --accent-soft: #eaf3fc;
+    --focus: rgba(10, 102, 194, 0.18);
+    --shadow: none;
+    --radius: 5px;
+    --display-font: "Open Sans", "Segoe UI", sans-serif;
+    --body-font: "Open Sans", "Segoe UI", sans-serif;
   }
 
   :root.theme-excel {
-    --background: 150 20% 97%;
-    --foreground: 156 25% 15%;
+    --background: 138 24% 96%;
+    --foreground: 156 28% 18%;
     --card: 0 0% 100%;
-    --primary: 152 65% 27%;
-    --muted: 150 18% 94%;
-    --muted-foreground: 153 13% 37%;
-    --accent: 150 45% 90%;
-    --border: 150 18% 85%;
-    --ring: 152 65% 31%;
-    --radius: 8px;
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-
-  :root.theme-quickbooks {
-    --background: 120 18% 97%;
-    --foreground: 140 22% 15%;
-    --card: 0 0% 100%;
-    --primary: 112 60% 29%;
-    --muted: 120 14% 94%;
-    --muted-foreground: 130 11% 37%;
-    --accent: 115 42% 90%;
-    --border: 120 16% 85%;
-    --ring: 112 60% 33%;
-    --radius: 20px;
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --primary: 146 61% 30%;
+    --muted: 138 20% 93%;
+    --muted-foreground: 153 14% 37%;
+    --accent: 138 30% 90%;
+    --border: 138 19% 83%;
+    --ring: 146 61% 30%;
+    --bg: #f3f8f4;
+    --bg-accent: rgba(30, 122, 71, 0.06);
+    --panel: #fdfefd;
+    --panel-2: #eef6f0;
+    --ink: #173223;
+    --ink-soft: #496557;
+    --muted: #567364;
+    --line: #c6d8cc;
+    --line-strong: #8daf97;
+    --accent: #1e7a47;
+    --accent-strong: #18623a;
+    --accent-soft: #e6f3ea;
+    --focus: rgba(30, 122, 71, 0.18);
+    --shadow: none;
+    --radius: 2px;
+    --display-font: "Carlito", "Calibri", "Segoe UI", sans-serif;
+    --body-font: "Carlito", "Calibri", "Segoe UI", sans-serif;
+    --section-gap: 12px;
+    --section-padding: 18px;
   }
 
   :root.theme-obsidian {
     --background: 0 0% 3%;
-    --foreground: 240 7% 95%;
+    --foreground: 240 8% 95%;
     --card: 240 6% 7%;
-    --primary: 0 72% 51%;
+    --primary: 0 84% 60%;
     --muted: 240 4% 11%;
-    --muted-foreground: 240 1% 55%;
-    --accent: 349 38% 11%;
-    --border: 240 4% 12%;
-    --ring: 0 72% 58%;
-    --radius: 18px;
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --muted-foreground: 240 3% 55%;
+    --accent: 347 89% 60%;
+    --border: 0 0% 5%;
+    --ring: 0 84% 60%;
+    --radius: 1.25rem;
+    --bg: #080808;
+    --bg-accent: rgba(239, 68, 68, 0.05);
+    --panel: #101012;
+    --panel-2: #121214;
+    --ink: #f0f0f2;
+    --ink-soft: #c8c8ca;
+    --muted: #8c8c8e;
+    --line: #0e0e0e;
+    --line-strong: #1c1c1e;
+    --accent: #ef4444;
+    --accent-strong: #f43f5e;
+    --accent-soft: #281216;
+    --focus: rgba(239, 68, 68, 0.24);
+    --shadow: -4px -4px 10px rgba(255, 255, 255, 0.025), 6px 6px 16px rgba(0, 0, 0, 0.85);
+    --display-font: "Manrope", "Inter", system-ui, sans-serif;
+    --body-font: "Manrope", "Inter", system-ui, sans-serif;
   }
 
   :root.theme-aurora {
-    --background: 225 44% 97%;
-    --foreground: 220 39% 11%;
+    --background: 225 36% 98%;
+    --foreground: 224 38% 16%;
     --card: 0 0% 100%;
-    --primary: 258 68% 42%;
-    --muted: 225 38% 92%;
-    --muted-foreground: 215 18% 41%;
-    --accent: 253 53% 95%;
-    --border: 214 32% 90%;
-    --ring: 258 68% 48%;
-    --radius: 18px;
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --primary: 267 85% 63%;
+    --muted: 225 30% 94%;
+    --muted-foreground: 216 18% 43%;
+    --accent: 230 64% 96%;
+    --border: 218 29% 90%;
+    --ring: 316 92% 72%;
+    --bg: #f7f8fc;
+    --bg-accent: rgba(129, 140, 248, 0.08);
+    --panel: #ffffff;
+    --panel-2: #f5f7fd;
+    --ink: #1e293b;
+    --ink-soft: #5b6880;
+    --muted: #66758f;
+    --line: #dde4f0;
+    --line-strong: #b9c4d8;
+    --accent: #8b5cf6;
+    --accent-strong: #22d3ee;
+    --accent-soft: #eef2ff;
+    --focus: rgba(34, 211, 238, 0.2);
+    --shadow: 0 18px 46px rgba(125, 145, 190, 0.15);
+    --radius: 0.9rem;
+    --display-font: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 22px;
+    --section-padding: 30px;
   }
 
   :root.theme-solar {
-    --background: 42 83% 96%;
-    --foreground: 29 39% 12%;
+    --background: 38 74% 94%;
+    --foreground: 27 40% 18%;
     --card: 40 100% 98%;
-    --primary: 34 95% 33%;
-    --muted: 40 62% 91%;
-    --muted-foreground: 30 20% 39%;
-    --accent: 46 93% 89%;
-    --border: 38 58% 84%;
-    --ring: 34 95% 38%;
-    --radius: 18px;
+    --primary: 33 90% 45%;
+    --muted: 39 56% 90%;
+    --muted-foreground: 28 22% 37%;
+    --accent: 42 90% 90%;
+    --border: 37 45% 80%;
+    --ring: 33 90% 45%;
+    --bg: #faf3e3;
+    --bg-accent: rgba(217, 119, 6, 0.08);
+    --panel: #fffaf0;
+    --panel-2: #f8eed7;
+    --ink: #7c4a1e;
+    --ink-soft: #8f6239;
+    --muted: #966f49;
+    --line: #dfc8a6;
+    --line-strong: #c59a69;
+    --accent: #d97706;
+    --accent-strong: #b85f00;
+    --accent-soft: #fff0d8;
+    --focus: rgba(217, 119, 6, 0.16);
+    --shadow: 0 8px 18px rgba(124, 74, 30, 0.06);
+    --radius: 10px;
     --display-font: "EB Garamond", Georgia, serif;
-    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "EB Garamond", Georgia, serif;
+    --section-gap: 20px;
+    --section-padding: 28px;
   }
 
   :root.theme-sunset {
-    --background: 285 28% 11%;
-    --foreground: 30 32% 92%;
-    --card: 287 24% 16%;
-    --primary: 22 92% 58%;
-    --muted: 286 18% 21%;
-    --muted-foreground: 30 22% 74%;
-    --accent: 12 48% 30%;
-    --border: 286 18% 27%;
-    --ring: 22 92% 58%;
-    --radius: 18px;
-    --shadow: 0 20px 44px rgba(0, 0, 0, 0.34);
-    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-
-  :root.theme-ember {
-    --background: 35 46% 95%;
-    --foreground: 16 40% 16%;
-    --card: 40 60% 99%;
-    --primary: 12 74% 40%;
-    --muted: 36 38% 90%;
-    --muted-foreground: 22 30% 34%;
-    --accent: 36 68% 86%;
-    --border: 34 32% 82%;
-    --ring: 12 74% 40%;
-    --radius: 18px;
-    --display-font: "EB Garamond", Georgia, serif;
-    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --background: 289 27% 10%;
+    --foreground: 25 38% 92%;
+    --card: 291 20% 16%;
+    --primary: 24 94% 58%;
+    --muted: 291 15% 20%;
+    --muted-foreground: 20 26% 74%;
+    --accent: 340 52% 27%;
+    --border: 300 14% 28%;
+    --ring: 338 88% 70%;
+    --bg: #1e1320;
+    --bg-accent: rgba(249, 115, 22, 0.12);
+    --panel: #2a192d;
+    --panel-2: #341f36;
+    --ink: #f6e4da;
+    --ink-soft: #d7bba8;
+    --muted: #c39b8b;
+    --line: #51374e;
+    --line-strong: #7a4e61;
+    --accent: #f97316;
+    --accent-strong: #fb7185;
+    --accent-soft: rgba(249, 115, 22, 0.14);
+    --focus: rgba(251, 113, 133, 0.24);
+    --shadow: 0 18px 44px rgba(13, 6, 16, 0.42);
+    --radius: 0.9rem;
+    --display-font: "Quicksand", "Open Sans", sans-serif;
+    --body-font: "Quicksand", "Open Sans", sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -286,11 +429,13 @@
   html {
     scroll-behavior: smooth;
     background: var(--bg);
+    overflow-x: clip;
   }
 
   body {
     margin: 0;
     min-width: 320px;
+    overflow-x: clip;
     font-family: var(--body-font);
     font-size: 16px;
     line-height: 1.6;
@@ -340,11 +485,12 @@
   .savebar-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 12px 16px;
+    min-height: 50px;
+    padding: 3px 16px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
   }
 
   .save-chip,
@@ -353,91 +499,139 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 14px;
+    padding: 0 12px;
     border: 1px solid var(--line);
     background: var(--panel);
     border-radius: 999px;
     color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1;
+    min-width: 0;
   }
 
-  .save-chip strong,
+  .save-chip span,
   .progress-chip strong {
     color: var(--ink);
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .save-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 999px;
     background: var(--accent);
-    box-shadow: 0 0 0 5px var(--accent-soft);
+    box-shadow: 0 0 0 4px var(--accent-soft);
     flex: 0 0 auto;
   }
 
-  .theme-switcher {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 44px;
+  .save-chip {
+    flex: 1 1 auto;
+  }
+
+  .progress-chip {
+    flex: 0 1 auto;
+  }
+
+  .theme-trigger {
     margin-left: auto;
-  }
-
-  .theme-label {
-    color: var(--muted);
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .theme-options {
-    display: inline-flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .theme-option {
-    position: relative;
-  }
-
-  .theme-option input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .theme-option label {
-    min-height: 44px;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 9px 12px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--panel);
-    color: var(--ink);
-    transition: border-color 140ms ease, transform 140ms ease, background 140ms ease;
+    justify-content: space-between;
+    min-width: 112px;
   }
 
-  .theme-option input:checked + label {
+  .field-theme-trigger {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding-inline: 14px;
+  }
+
+  .theme-trigger-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .theme-trigger-copy span:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .theme-trigger-caret {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .theme-menu {
+    position: fixed;
+    z-index: 75;
+    display: none;
+    width: min(340px, calc(100vw - 24px));
+    max-height: min(72vh, 540px);
+    overflow: auto;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+  }
+
+  .theme-menu.show {
+    display: grid;
+    gap: 6px;
+  }
+
+  .theme-menu-option {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+  }
+
+  .theme-menu-option:hover,
+  .theme-menu-option[aria-checked="true"] {
     border-color: var(--accent-strong);
+    background: var(--accent-soft);
+  }
+
+  .theme-menu-option[aria-checked="true"] {
     box-shadow: 0 0 0 3px var(--focus);
   }
 
-  .theme-option input:focus-visible + label {
-    outline: 3px solid var(--focus);
-    outline-offset: 2px;
+  .theme-menu-option-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .theme-menu-option-copy span:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .theme-swatch {
     display: inline-grid;
     grid-template-columns: repeat(3, 10px);
     gap: 2px;
+    flex: 0 0 auto;
   }
 
   .theme-swatch span {
@@ -445,92 +639,14 @@
     height: 10px;
     border-radius: 999px;
     display: block;
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(1) { background: #f5f1e8; border: 1px solid #d8cfbf; }
-  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(2) { background: #6f8d72; }
-  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(3) { background: #243028; }
-  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(1) { background: #142035; }
-  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(2) { background: #256ee7; }
-  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(3) { background: #e4eaf0; border: 1px solid #bec8d2; }
-  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(1) { background: #16101a; }
-  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(2) { background: #7046cf; }
-  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(3) { background: #ebe6ef; border: 1px solid #bfb2c9; }
-  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(1) { background: linear-gradient(135deg, #16223b, #292044); }
-  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(2) { background: #38baeb; }
-  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(3) { background: rgba(231, 240, 247, 0.9); border: 1px solid #bfd1de; }
-  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(1) { background: #0d162d; }
-  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(2) { background: #0fe0e8; }
-  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(3) { background: #e5eef0; border: 1px solid #bad0d4; }
-  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(1) { background: #f8fafc; border: 1px solid #d6dee6; }
-  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(2) { background: #2c5fb2; }
-  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(3) { background: #202d3a; }
-  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(1) { background: #f3f8fb; border: 1px solid #d4e0e9; }
-  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(2) { background: #0f68b3; }
-  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(3) { background: #223247; }
-  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(1) { background: #f4faf7; border: 1px solid #d0dfd7; }
-  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(2) { background: #187244; }
-  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(3) { background: #1e3027; }
-  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(1) { background: #f5faf5; border: 1px solid #d3e0d3; }
-  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(2) { background: #419431; }
-  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(3) { background: #203025; }
-  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(1) { background: #080808; }
-  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(2) { background: #dc2c2c; }
-  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(3) { background: #f2f2f4; border: 1px solid #d0d0d5; }
-  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(1) { background: #f3f5fc; border: 1px solid #d8ddef; }
-  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(2) { background: #6843b4; }
-  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(3) { background: #1a2440; }
-  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(1) { background: #fff6e8; border: 1px solid #e7d6b8; }
-  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(2) { background: #a56404; }
-  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(3) { background: #352314; }
-  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(1) { background: #24182b; }
-  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(2) { background: #f67f2f; }
-  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(3) { background: #f0e6dd; border: 1px solid #d0bca9; }
-  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(1),
-  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(1) { background: #f4ede4; border: 1px solid #ddcbb6; }
-  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(2),
-  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(2) { background: #b24f2e; }
-  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(3),
-  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(3) { background: #46281d; }
+  .theme-menu-check {
+    color: var(--accent-strong);
+    font-weight: 700;
+    flex: 0 0 auto;
+  }
 
   .save-actions {
     display: inline-flex;
@@ -889,6 +1005,13 @@
     margin-top: 10px;
   }
 
+  .export-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
   .muted-note {
     color: var(--muted);
     font-size: 0.94rem;
@@ -958,13 +1081,6 @@
     transform: translateY(0);
   }
 
-  :root.theme-glass body {
-    background:
-      radial-gradient(circle at top left, hsl(199 89% 55% / 0.12), transparent 34%),
-      linear-gradient(135deg, hsl(222 47% 10%), hsl(250 38% 14%) 52%, hsl(205 46% 13%));
-    background-attachment: fixed;
-  }
-
   :root.theme-midnight .button.primary:hover,
   :root.theme-violet .button.primary:hover,
   :root.theme-glass .button.primary:hover,
@@ -983,7 +1099,6 @@
   :root.theme-midnight textarea,
   :root.theme-midnight .pill-stack .pill-label,
   :root.theme-midnight .theme-radio-stack .pill-label,
-  :root.theme-midnight .theme-option label,
   :root.theme-midnight .icon-button,
   :root.theme-midnight .button,
   :root.theme-midnight .save-chip,
@@ -995,7 +1110,6 @@
   :root.theme-violet textarea,
   :root.theme-violet .pill-stack .pill-label,
   :root.theme-violet .theme-radio-stack .pill-label,
-  :root.theme-violet .theme-option label,
   :root.theme-violet .icon-button,
   :root.theme-violet .button,
   :root.theme-violet .save-chip,
@@ -1007,7 +1121,6 @@
   :root.theme-glass textarea,
   :root.theme-glass .pill-stack .pill-label,
   :root.theme-glass .theme-radio-stack .pill-label,
-  :root.theme-glass .theme-option label,
   :root.theme-glass .icon-button,
   :root.theme-glass .button,
   :root.theme-glass .save-chip,
@@ -1019,7 +1132,6 @@
   :root.theme-electric textarea,
   :root.theme-electric .pill-stack .pill-label,
   :root.theme-electric .theme-radio-stack .pill-label,
-  :root.theme-electric .theme-option label,
   :root.theme-electric .icon-button,
   :root.theme-electric .button,
   :root.theme-electric .save-chip,
@@ -1031,7 +1143,6 @@
   :root.theme-obsidian textarea,
   :root.theme-obsidian .pill-stack .pill-label,
   :root.theme-obsidian .theme-radio-stack .pill-label,
-  :root.theme-obsidian .theme-option label,
   :root.theme-obsidian .icon-button,
   :root.theme-obsidian .button,
   :root.theme-obsidian .save-chip,
@@ -1043,7 +1154,6 @@
   :root.theme-sunset textarea,
   :root.theme-sunset .pill-stack .pill-label,
   :root.theme-sunset .theme-radio-stack .pill-label,
-  :root.theme-sunset .theme-option label,
   :root.theme-sunset .icon-button,
   :root.theme-sunset .button,
   :root.theme-sunset .save-chip,
@@ -1060,10 +1170,18 @@
       grid-template-columns: 1fr;
     }
 
-    .theme-switcher {
-      margin-left: 0;
-      width: 100%;
-      justify-content: space-between;
+    .savebar-inner {
+      padding-inline: 12px;
+    }
+
+    .save-chip,
+    .progress-chip,
+    .theme-trigger {
+      font-size: 0.86rem;
+    }
+
+    .theme-trigger {
+      min-width: 92px;
     }
   }
 
@@ -1074,6 +1192,526 @@
       transition: none !important;
     }
   }
+
+  :root.theme-glass body {
+    background:
+      radial-gradient(900px circle at 10% 0%, rgba(139, 92, 246, 0.32), transparent 52%),
+      radial-gradient(800px circle at 90% 100%, rgba(219, 39, 119, 0.24), transparent 55%),
+      radial-gradient(600px circle at 90% 0%, rgba(99, 102, 241, 0.16), transparent 60%),
+      radial-gradient(700px circle at 10% 100%, rgba(168, 85, 247, 0.14), transparent 60%),
+      rgb(6 10 20);
+    background-attachment: fixed;
+  }
+
+  :root.theme-glass .savebar,
+  :root.theme-glass .hero-card,
+  :root.theme-glass .hero-note,
+  :root.theme-glass .form-shell,
+  :root.theme-glass .section,
+  :root.theme-glass .repeater-row,
+  :root.theme-glass .modal,
+  :root.theme-glass .theme-menu,
+  :root.theme-glass .toast,
+  :root.theme-glass .save-chip,
+  :root.theme-glass .progress-chip,
+  :root.theme-glass .button,
+  :root.theme-glass .icon-button,
+  :root.theme-glass .pill-stack .pill-label,
+  :root.theme-glass .theme-radio-stack .pill-label,
+  :root.theme-glass input[type="text"],
+  :root.theme-glass input[type="number"],
+  :root.theme-glass input[type="date"],
+  :root.theme-glass input[type="time"],
+  :root.theme-glass textarea,
+  :root.theme-glass select {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(167, 139, 250, 0.10), transparent 60%),
+      radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.08), transparent 60%),
+      rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  :root.theme-glass h1,
+  :root.theme-glass h2 {
+    text-shadow: 0 0 24px rgba(167, 139, 250, 0.4);
+  }
+
+  :root.theme-obsidian h1,
+  :root.theme-obsidian h2,
+  :root.theme-obsidian h3 {
+    font-family: "Manrope", "Inter", system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  :root.theme-obsidian .savebar,
+  :root.theme-obsidian .hero-card,
+  :root.theme-obsidian .hero-note,
+  :root.theme-obsidian .section,
+  :root.theme-obsidian .repeater-row,
+  :root.theme-obsidian .modal,
+  :root.theme-obsidian .theme-menu,
+  :root.theme-obsidian .toast,
+  :root.theme-obsidian .save-chip,
+  :root.theme-obsidian .progress-chip,
+  :root.theme-obsidian .button,
+  :root.theme-obsidian .icon-button,
+  :root.theme-obsidian .pill-stack .pill-label,
+  :root.theme-obsidian .theme-radio-stack .pill-label {
+    background: #101012;
+    border: none;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.025), 6px 6px 16px rgba(0, 0, 0, 0.85);
+  }
+
+  :root.theme-obsidian input[type="text"],
+  :root.theme-obsidian input[type="number"],
+  :root.theme-obsidian input[type="date"],
+  :root.theme-obsidian input[type="time"],
+  :root.theme-obsidian textarea,
+  :root.theme-obsidian select {
+    background: rgb(18 18 20);
+    border: none !important;
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.6), inset -3px -3px 8px rgba(255, 255, 255, 0.03);
+  }
+
+  :root.theme-obsidian .button,
+  :root.theme-obsidian .pill-stack label,
+  :root.theme-obsidian .theme-radio-stack .pill-label {
+    border-radius: 9999px;
+  }
+
+  :root.theme-sage h1,
+  :root.theme-sage h2,
+  :root.theme-sage h3 {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  :root.theme-sage .hero-card,
+  :root.theme-sage .section,
+  :root.theme-sage .modal,
+  :root.theme-sage .savebar,
+  :root.theme-sage .theme-menu,
+  :root.theme-sage .toast,
+  :root.theme-sage .hero-note,
+  :root.theme-sage .repeater-row {
+    border-radius: 14px;
+    border: 1px solid #ddd6ca;
+    box-shadow: 0 12px 28px rgba(48, 54, 45, 0.08);
+  }
+
+  :root.theme-sage input[type="text"],
+  :root.theme-sage input[type="number"],
+  :root.theme-sage input[type="date"],
+  :root.theme-sage input[type="time"],
+  :root.theme-sage textarea,
+  :root.theme-sage .button,
+  :root.theme-sage .icon-button,
+  :root.theme-sage .pill-stack .pill-label,
+  :root.theme-sage .theme-radio-stack .pill-label,
+  :root.theme-sage .save-chip,
+  :root.theme-sage .progress-chip {
+    border-radius: 14px;
+    border: 1px solid #ddd6ca;
+    box-shadow: 0 6px 14px rgba(48, 54, 45, 0.04);
+  }
+
+  :root.theme-midnight body {
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  :root.theme-midnight h1,
+  :root.theme-midnight h2,
+  :root.theme-midnight h3,
+  :root.theme-midnight .eyebrow,
+  :root.theme-midnight .section-kicker {
+    font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  :root.theme-midnight .hero-card,
+  :root.theme-midnight .section,
+  :root.theme-midnight .modal,
+  :root.theme-midnight .theme-menu,
+  :root.theme-midnight .toast,
+  :root.theme-midnight .hero-note,
+  :root.theme-midnight .repeater-row,
+  :root.theme-midnight .savebar {
+    border-radius: 6px;
+    border: 1px solid #20304d;
+    box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.04);
+  }
+
+  :root.theme-midnight input[type="text"],
+  :root.theme-midnight input[type="number"],
+  :root.theme-midnight input[type="date"],
+  :root.theme-midnight input[type="time"],
+  :root.theme-midnight textarea,
+  :root.theme-midnight .button,
+  :root.theme-midnight .icon-button,
+  :root.theme-midnight .pill-stack .pill-label,
+  :root.theme-midnight .theme-radio-stack .pill-label,
+  :root.theme-midnight .save-chip,
+  :root.theme-midnight .progress-chip {
+    border-radius: 6px;
+    border: 1px solid #2b3b5a;
+    box-shadow: none;
+  }
+
+  :root.theme-violet h1,
+  :root.theme-violet h2,
+  :root.theme-violet h3 {
+    font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  :root.theme-violet .hero-card,
+  :root.theme-violet .section,
+  :root.theme-violet .modal,
+  :root.theme-violet .theme-menu,
+  :root.theme-violet .toast,
+  :root.theme-violet .hero-note,
+  :root.theme-violet .repeater-row,
+  :root.theme-violet .savebar,
+  :root.theme-violet .button,
+  :root.theme-violet .icon-button,
+  :root.theme-violet .pill-stack .pill-label,
+  :root.theme-violet .theme-radio-stack .pill-label,
+  :root.theme-violet .save-chip,
+  :root.theme-violet .progress-chip,
+  :root.theme-violet input[type="text"],
+  :root.theme-violet input[type="number"],
+  :root.theme-violet input[type="date"],
+  :root.theme-violet input[type="time"],
+  :root.theme-violet textarea {
+    border-radius: 1.5rem;
+  }
+
+  :root.theme-violet .pill-stack input:checked + .pill-label,
+  :root.theme-violet .theme-radio-stack input:checked + .pill-label,
+  :root.theme-violet input:focus,
+  :root.theme-violet textarea:focus,
+  :root.theme-violet .button:focus-visible,
+  :root.theme-violet .icon-button:focus-visible {
+    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.2), 0 0 32px rgba(124, 92, 255, 0.32);
+  }
+
+  :root.theme-electric body {
+    background:
+      radial-gradient(900px circle at 18% 0%, rgba(6, 182, 212, 0.22), transparent 42%),
+      radial-gradient(720px circle at 100% 100%, rgba(34, 211, 238, 0.16), transparent 48%),
+      linear-gradient(180deg, #08101f, #08101f);
+    background-attachment: fixed;
+    font-variant-numeric: tabular-nums;
+  }
+
+  :root.theme-electric h1,
+  :root.theme-electric h2,
+  :root.theme-electric h3 {
+    font-family: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  :root.theme-electric .hero-card,
+  :root.theme-electric .section,
+  :root.theme-electric .modal,
+  :root.theme-electric .theme-menu,
+  :root.theme-electric .toast,
+  :root.theme-electric .hero-note,
+  :root.theme-electric .repeater-row,
+  :root.theme-electric .savebar,
+  :root.theme-electric .button,
+  :root.theme-electric .icon-button,
+  :root.theme-electric .pill-stack .pill-label,
+  :root.theme-electric .theme-radio-stack .pill-label,
+  :root.theme-electric .save-chip,
+  :root.theme-electric .progress-chip,
+  :root.theme-electric input[type="text"],
+  :root.theme-electric input[type="number"],
+  :root.theme-electric input[type="date"],
+  :root.theme-electric input[type="time"],
+  :root.theme-electric textarea {
+    border-radius: 8px;
+  }
+
+  :root.theme-electric .pill-stack input:checked + .pill-label,
+  :root.theme-electric .theme-radio-stack input:checked + .pill-label,
+  :root.theme-electric input:focus,
+  :root.theme-electric textarea:focus,
+  :root.theme-electric .button:focus-visible,
+  :root.theme-electric .icon-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2), 0 0 20px rgba(34, 211, 238, 0.42);
+  }
+
+  :root.theme-paper .hero-card,
+  :root.theme-paper .section,
+  :root.theme-paper .modal,
+  :root.theme-paper .theme-menu,
+  :root.theme-paper .toast,
+  :root.theme-paper .hero-note,
+  :root.theme-paper .repeater-row,
+  :root.theme-paper .savebar,
+  :root.theme-paper .button,
+  :root.theme-paper .icon-button,
+  :root.theme-paper .pill-stack .pill-label,
+  :root.theme-paper .theme-radio-stack .pill-label,
+  :root.theme-paper .save-chip,
+  :root.theme-paper .progress-chip,
+  :root.theme-paper input[type="text"],
+  :root.theme-paper input[type="number"],
+  :root.theme-paper input[type="date"],
+  :root.theme-paper input[type="time"],
+  :root.theme-paper textarea {
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  :root.theme-paper h1,
+  :root.theme-paper h2,
+  :root.theme-paper h3 {
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  :root.theme-paper .hero-card,
+  :root.theme-paper .section,
+  :root.theme-paper .modal {
+    background: #ffffff;
+  }
+
+  :root.theme-paper .savebar {
+    background: #f8fafc;
+  }
+
+  :root.theme-paper .hero-note,
+  :root.theme-paper .repeater-row {
+    background: #f8fafc;
+  }
+
+  :root.theme-paper .button.primary {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  :root.theme-solar body {
+    line-height: 1.75;
+  }
+
+  :root.theme-solar h1,
+  :root.theme-solar h2,
+  :root.theme-solar h3 {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  :root.theme-solar .hero-card,
+  :root.theme-solar .section,
+  :root.theme-solar .modal,
+  :root.theme-solar .theme-menu,
+  :root.theme-solar .toast,
+  :root.theme-solar .hero-note,
+  :root.theme-solar .repeater-row,
+  :root.theme-solar .savebar {
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(124, 74, 30, 0.06);
+  }
+
+  :root.theme-solar .section {
+    gap: 18px;
+  }
+
+  :root.theme-solar .section-head,
+  :root.theme-solar .field + .field,
+  :root.theme-solar .row-2 + .row-2,
+  :root.theme-solar .row-3 + .row-3 {
+    padding-top: 12px;
+    border-top: 1px solid rgba(197, 154, 105, 0.45);
+  }
+
+  :root.theme-solar .hero-copy p:first-of-type::first-letter {
+    float: left;
+    font-size: 3.1rem;
+    line-height: 0.9;
+    padding-right: 6px;
+    color: #d97706;
+  }
+
+  :root.theme-aurora h1,
+  :root.theme-aurora h2,
+  :root.theme-aurora h3 {
+    font-family: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    background: linear-gradient(90deg, #8b5cf6 0%, #22d3ee 52%, #f472b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  :root.theme-aurora .hero-card,
+  :root.theme-aurora .section,
+  :root.theme-aurora .modal,
+  :root.theme-aurora .theme-menu,
+  :root.theme-aurora .toast,
+  :root.theme-aurora .hero-note,
+  :root.theme-aurora .repeater-row,
+  :root.theme-aurora .savebar {
+    border-radius: 0.9rem;
+    box-shadow: 0 18px 46px rgba(125, 145, 190, 0.15);
+  }
+
+  :root.theme-aurora .button.primary,
+  :root.theme-aurora .pill-stack input:checked + .pill-label,
+  :root.theme-aurora .theme-radio-stack input:checked + .pill-label,
+  :root.theme-aurora .theme-menu-option[aria-checked="true"] {
+    background: linear-gradient(90deg, #8b5cf6 0%, #22d3ee 52%, #f472b6 100%);
+    border-color: transparent;
+    color: #ffffff;
+  }
+
+  :root.theme-aurora .app,
+  :root.theme-aurora .field-grid {
+    row-gap: 22px;
+  }
+
+  :root.theme-excel body {
+    font-size: 15px;
+    line-height: 1.45;
+    background:
+      linear-gradient(rgba(30, 122, 71, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 122, 71, 0.05) 1px, transparent 1px),
+      linear-gradient(180deg, #f3f8f4, #f3f8f4);
+    background-size: 24px 24px, 24px 24px, auto;
+  }
+
+  :root.theme-excel h1,
+  :root.theme-excel h2,
+  :root.theme-excel h3 {
+    font-family: "Carlito", "Calibri", "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  :root.theme-excel .hero-card,
+  :root.theme-excel .section,
+  :root.theme-excel .modal,
+  :root.theme-excel .theme-menu,
+  :root.theme-excel .toast,
+  :root.theme-excel .hero-note,
+  :root.theme-excel .repeater-row,
+  :root.theme-excel .savebar,
+  :root.theme-excel .button,
+  :root.theme-excel .icon-button,
+  :root.theme-excel .pill-stack .pill-label,
+  :root.theme-excel .theme-radio-stack .pill-label,
+  :root.theme-excel .save-chip,
+  :root.theme-excel .progress-chip,
+  :root.theme-excel input[type="text"],
+  :root.theme-excel input[type="number"],
+  :root.theme-excel input[type="date"],
+  :root.theme-excel input[type="time"],
+  :root.theme-excel textarea {
+    border-radius: 2px;
+    border-width: 1px;
+    box-shadow: none;
+  }
+
+  :root.theme-excel .section,
+  :root.theme-excel .repeater-row {
+    background-image: linear-gradient(to bottom, rgba(30, 122, 71, 0.04), rgba(30, 122, 71, 0.04));
+  }
+
+  :root.theme-outlook h1,
+  :root.theme-outlook h2,
+  :root.theme-outlook h3 {
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  :root.theme-outlook .hero-card,
+  :root.theme-outlook .section,
+  :root.theme-outlook .modal,
+  :root.theme-outlook .theme-menu,
+  :root.theme-outlook .toast,
+  :root.theme-outlook .hero-note,
+  :root.theme-outlook .repeater-row,
+  :root.theme-outlook .savebar,
+  :root.theme-outlook .button,
+  :root.theme-outlook .icon-button,
+  :root.theme-outlook .pill-stack .pill-label,
+  :root.theme-outlook .theme-radio-stack .pill-label,
+  :root.theme-outlook .save-chip,
+  :root.theme-outlook .progress-chip,
+  :root.theme-outlook input[type="text"],
+  :root.theme-outlook input[type="number"],
+  :root.theme-outlook input[type="date"],
+  :root.theme-outlook input[type="time"],
+  :root.theme-outlook textarea {
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  :root.theme-outlook .section,
+  :root.theme-outlook .hero-card,
+  :root.theme-outlook .modal {
+    border-top: 4px solid #0a66c2;
+  }
+
+  :root.theme-outlook .button.primary {
+    background: #0a66c2;
+    border-color: #0a66c2;
+  }
+
+  :root.theme-sunset body {
+    background:
+      radial-gradient(800px circle at 15% 0%, rgba(249, 115, 22, 0.18), transparent 45%),
+      radial-gradient(740px circle at 100% 100%, rgba(251, 113, 133, 0.14), transparent 48%),
+      linear-gradient(180deg, #1e1320, #1e1320);
+    background-attachment: fixed;
+  }
+
+  :root.theme-sunset h1,
+  :root.theme-sunset h2,
+  :root.theme-sunset h3 {
+    font-family: "Quicksand", "Open Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  :root.theme-sunset .hero-card,
+  :root.theme-sunset .section,
+  :root.theme-sunset .modal,
+  :root.theme-sunset .theme-menu,
+  :root.theme-sunset .toast,
+  :root.theme-sunset .hero-note,
+  :root.theme-sunset .repeater-row,
+  :root.theme-sunset .savebar,
+  :root.theme-sunset .button,
+  :root.theme-sunset .icon-button,
+  :root.theme-sunset .pill-stack .pill-label,
+  :root.theme-sunset .theme-radio-stack .pill-label,
+  :root.theme-sunset .save-chip,
+  :root.theme-sunset .progress-chip,
+  :root.theme-sunset input[type="text"],
+  :root.theme-sunset input[type="number"],
+  :root.theme-sunset input[type="date"],
+  :root.theme-sunset input[type="time"],
+  :root.theme-sunset textarea {
+    border-radius: 0.9rem;
+  }
+
+  :root.theme-sunset .button.primary,
+  :root.theme-sunset .pill-stack input:checked + .pill-label,
+  :root.theme-sunset .theme-radio-stack input:checked + .pill-label {
+    box-shadow: 0 0 0 1px rgba(251, 113, 133, 0.3), 0 0 24px rgba(249, 115, 22, 0.24);
+  }
 </style>
 </head>
 <body>
@@ -1081,19 +1719,18 @@
     <div class="savebar-inner">
       <div class="save-chip" aria-live="polite">
         <span class="save-dot" aria-hidden="true"></span>
-        <span><strong>Saved</strong> <span id="saveStatus">Not saved yet</span></span>
-      </div>
-      <div class="theme-switcher" aria-label="Theme switcher">
-        <span class="theme-label">Theme</span>
-        <div class="theme-options" id="themeSwitcher"></div>
+        <span id="saveStatus">Not saved yet</span>
       </div>
       <div class="progress-chip" aria-live="polite">
         <strong id="progressCount">0 of 0 answered</strong>
       </div>
-      <div class="save-actions">
-        <button type="button" class="button" id="clearButton">Start over</button>
-        <button type="button" class="button primary" id="downloadTop">Download all three</button>
-      </div>
+      <button type="button" class="button theme-trigger" id="savebarThemeButton" data-theme-trigger="savebar" aria-haspopup="menu" aria-expanded="false">
+        <span class="theme-trigger-copy">
+          <span class="theme-swatch" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Theme</span>
+        </span>
+        <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+      </button>
     </div>
   </div>
 
@@ -1105,7 +1742,7 @@
           <div class="hero-copy">
             <h1>Max’s dashboard + Claude setup, before the call.</h1>
             <p>This sets up your dashboard and your Claude before our call. It should take about 20–25 minutes, saves as you go, and the more specific you are here, the more dialed-in the first build can be.</p>
-            <p>You can switch the color theme in the top-right at any point. Nothing here is fragile; if you stop midway, your place and answers will still be here when you come back.</p>
+            <p>You can switch the design theme near the top of the form or from the savebar at any point. Nothing here is fragile; if you stop midway, your place and answers will still be here when you come back.</p>
           </div>
           <aside class="hero-note">
             <strong>What this feeds</strong>
@@ -1119,7 +1756,11 @@
 
     <div class="bottom-actions">
       <p class="muted-note">Exports include a clean copy for you, a Claude-tagged copy for the downstream build, and machine-readable JSON with the full slot-map.</p>
-      <button type="button" class="button primary" id="downloadBottom">Download all three</button>
+      <div class="export-actions">
+        <button type="button" class="button" id="clearButton">Start over</button>
+        <button type="button" class="button" id="shareBottom" hidden>Send via Messages / Mail</button>
+        <button type="button" class="button primary" id="downloadBottom">Download all three</button>
+      </div>
     </div>
   </div>
 
@@ -1135,31 +1776,32 @@
   </div>
 
   <div class="toast" id="toast" aria-live="polite"></div>
+  <div class="theme-menu" id="themeMenu" role="menu" aria-hidden="true"></div>
 
 <script>
 (function () {
   const STORAGE_KEY = "max-setup-intake-2026-05-28";
   const THEME_KEY = "max-setup-intake-theme-2026-05-28";
-  const THEMES = ["sage", "midnight", "violet", "glass", "electric", "paper", "outlook", "excel", "quickbooks", "obsidian", "aurora", "solar", "sunset", "ember"];
-  const THEME_CHOICES = [
-    { value: "sage", label: "Sage" },
-    { value: "midnight", label: "Midnight" },
-    { value: "violet", label: "Violet" },
-    { value: "glass", label: "Glass" },
-    { value: "electric", label: "Electric" },
-    { value: "paper", label: "Paper" },
-    { value: "outlook", label: "Outlook" },
-    { value: "excel", label: "Excel" },
-    { value: "quickbooks", label: "QuickBooks" },
-    { value: "obsidian", label: "Obsidian" },
-    { value: "aurora", label: "Aurora" },
-    { value: "solar", label: "Solar" },
-    { value: "sunset", label: "Sunset" },
-    { value: "ember", label: "Ember" }
+  const THEME_REGISTRY = [
+    { id: "sage", label: "Sage", swatch: ["#f5f1e8", "#6f8d72", "#243028"] },
+    { id: "glass", label: "Glass", swatch: ["linear-gradient(135deg, #16223b, #292044)", "#38baeb", "#edf1f7"] },
+    { id: "obsidian", label: "Obsidian", swatch: ["#080808", "#dc2c2c", "#f2f2f4"] },
+    { id: "midnight", label: "Midnight", swatch: ["#142035", "#256ee7", "#e4eaf0"] },
+    { id: "violet", label: "Violet", swatch: ["#16101a", "#7046cf", "#ebe6ef"] },
+    { id: "electric", label: "Electric", swatch: ["#0d162d", "#0fe0e8", "#e5eef0"] },
+    { id: "paper", label: "Paper", swatch: ["#f8fafc", "#2c5fb2", "#202d3a"] },
+    { id: "solar", label: "Solar", swatch: ["#fff6e8", "#a56404", "#352314"] },
+    { id: "aurora", label: "Aurora", swatch: ["#f3f5fc", "#6843b4", "#1a2440"] },
+    { id: "excel", label: "Excel", swatch: ["#f4faf7", "#187244", "#1e3027"] },
+    { id: "outlook", label: "Outlook", swatch: ["#f3f8fb", "#0f68b3", "#223247"] },
+    { id: "sunset", label: "Sunset", swatch: ["#24182b", "#f67f2f", "#f0e6dd"] }
   ];
+  const THEMES = THEME_REGISTRY.map((theme) => theme.id);
+  const THEME_CHOICES = THEME_REGISTRY.map((theme) => ({ value: theme.id, label: theme.label, swatch: theme.swatch }));
   const STATE = {};
   let pendingDraft = null;
   let saveTimer = null;
+  let themeMenuAnchor = null;
 
   const SECTIONS = [
     {
@@ -1753,13 +2395,16 @@
 
   function updateProgress() {
     const { answered, total } = progressStats();
-    document.getElementById("progressCount").textContent = answered + " of " + total + " answered";
+    const compact = window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+    document.getElementById("progressCount").textContent = compact
+      ? answered + "/" + total + " answered"
+      : answered + " of " + total + " answered";
   }
 
   function formatSavedTime(isoString) {
     const date = new Date(isoString);
-    if (Number.isNaN(date.getTime())) return "just now";
-    return "at " + date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    if (Number.isNaN(date.getTime())) return "Saved just now";
+    return "Saved at " + date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
   }
 
   function updateSaveStatus(text) {
@@ -1781,9 +2426,105 @@
   }
 
   function debouncedSave() {
-    updateSaveStatus("saving...");
+    updateSaveStatus("Saving...");
     clearTimeout(saveTimer);
     saveTimer = setTimeout(persistState, 220);
+  }
+
+  function themeRecord(themeId) {
+    return THEME_REGISTRY.find((theme) => theme.id === themeId) || THEME_REGISTRY[0];
+  }
+
+  function fillThemeSwatch(node, swatch) {
+    if (!node || !swatch) return;
+    Array.from(node.children).forEach((chip, index) => {
+      chip.style.background = swatch[index] || "transparent";
+    });
+  }
+
+  function createThemeSwatch(swatch) {
+    const node = el("span", { class: "theme-swatch", "aria-hidden": "true" }, el("span"), el("span"), el("span"));
+    fillThemeSwatch(node, swatch);
+    return node;
+  }
+
+  function syncThemeButtons(theme) {
+    const record = themeRecord(theme);
+    document.querySelectorAll("[data-theme-trigger]").forEach((button) => {
+      fillThemeSwatch(button.querySelector(".theme-swatch"), record.swatch);
+      const label = button.querySelector("[data-theme-trigger-label]");
+      if (label) label.textContent = record.label;
+    });
+  }
+
+  function closeThemeMenu() {
+    const menu = document.getElementById("themeMenu");
+    menu.classList.remove("show");
+    menu.setAttribute("aria-hidden", "true");
+    document.querySelectorAll("[data-theme-trigger]").forEach((button) => button.setAttribute("aria-expanded", "false"));
+    themeMenuAnchor = null;
+  }
+
+  function positionThemeMenu(anchor) {
+    const menu = document.getElementById("themeMenu");
+    const rect = anchor.getBoundingClientRect();
+    const width = Math.min(Math.max(rect.width, 240), window.innerWidth - 24);
+    const left = Math.min(rect.left, window.innerWidth - width - 12);
+    let top = rect.bottom + 8;
+    menu.style.width = width + "px";
+    menu.style.left = Math.max(12, left) + "px";
+    menu.style.top = top + "px";
+    const menuHeight = menu.offsetHeight;
+    if (top + menuHeight > window.innerHeight - 12) {
+      top = Math.max(12, rect.top - menuHeight - 8);
+      menu.style.top = top + "px";
+    }
+  }
+
+  function openThemeMenu(anchor) {
+    const menu = document.getElementById("themeMenu");
+    const theme = loadTheme();
+    if (themeMenuAnchor === anchor && menu.classList.contains("show")) {
+      closeThemeMenu();
+      return;
+    }
+    themeMenuAnchor = anchor;
+    document.querySelectorAll("[data-theme-trigger]").forEach((button) => {
+      button.setAttribute("aria-expanded", button === anchor ? "true" : "false");
+    });
+    Array.from(menu.querySelectorAll(".theme-menu-option")).forEach((button) => {
+      button.setAttribute("aria-checked", button.dataset.themeId === theme ? "true" : "false");
+      const check = button.querySelector(".theme-menu-check");
+      if (check) check.textContent = button.dataset.themeId === theme ? "✓" : "";
+    });
+    menu.classList.add("show");
+    menu.setAttribute("aria-hidden", "false");
+    positionThemeMenu(anchor);
+  }
+
+  function renderThemeMenu() {
+    const menu = document.getElementById("themeMenu");
+    menu.innerHTML = "";
+    THEME_REGISTRY.forEach((theme) => {
+      const option = el("button", {
+        type: "button",
+        class: "theme-menu-option",
+        role: "menuitemradio",
+        "data-theme-id": theme.id,
+        "aria-checked": "false"
+      },
+        el("span", { class: "theme-menu-option-copy" },
+          createThemeSwatch(theme.swatch),
+          el("span", { text: theme.label })
+        ),
+        el("span", { class: "theme-menu-check", "aria-hidden": "true" })
+      );
+      option.addEventListener("click", () => {
+        applyTheme(theme.id);
+        closeThemeMenu();
+      });
+      menu.appendChild(option);
+    });
   }
 
   function applyTheme(themeName, options = {}) {
@@ -1799,41 +2540,7 @@
     setValueSilently("pref", "base_theme", theme);
     if (document.getElementById("progressCount")) updateProgress();
     if (persistDraft && document.getElementById("saveStatus")) debouncedSave();
-    document.querySelectorAll('input[name="themePicker"]').forEach((input) => {
-      input.checked = input.value === theme;
-    });
-    document.querySelectorAll('input[name="pref--base_theme--group"]').forEach((input) => {
-      input.checked = input.value === theme;
-    });
-  }
-
-  function renderThemeSwitcher() {
-    const mount = document.getElementById("themeSwitcher");
-    mount.innerHTML = "";
-    const savedTheme = loadTheme();
-    THEME_CHOICES.forEach((choice) => {
-      const id = "theme-" + choice.value;
-      const wrap = el("div", { class: "theme-option", "data-theme": choice.value });
-      const input = el("input", {
-        type: "radio",
-        id,
-        name: "themePicker",
-        value: choice.value
-      });
-      input.checked = savedTheme === choice.value;
-      input.addEventListener("change", () => applyTheme(choice.value));
-      const label = el("label", { for: id },
-        el("span", { class: "theme-swatch", "aria-hidden": "true" },
-          el("span"),
-          el("span"),
-          el("span")
-        ),
-        el("span", { text: choice.label })
-      );
-      wrap.appendChild(input);
-      wrap.appendChild(label);
-      mount.appendChild(wrap);
-    });
+    syncThemeButtons(theme);
   }
 
   function loadTheme() {
@@ -1935,11 +2642,35 @@
       return wrap;
     }
 
-    if (field.type === "radio" || field.type === "checkboxes" || field.type === "rating" || field.type === "theme_picker") {
+    if (field.type === "theme_picker") {
       const fieldset = el("fieldset", { class: "fieldset" });
       fieldset.appendChild(el("legend", { text: field.label }));
       if (field.hint) fieldset.appendChild(el("div", { class: "hint", text: field.hint }));
-      const stackClass = field.type === "theme_picker" ? "theme-radio-stack" : "pill-stack" + (field.type === "rating" ? " rating-stack" : "");
+      const theme = themeRecord(currentValue || loadTheme());
+      const button = el("button", {
+        type: "button",
+        class: "button field-theme-trigger theme-trigger",
+        "data-theme-trigger": "field",
+        "aria-haspopup": "menu",
+        "aria-expanded": "false"
+      },
+        el("span", { class: "theme-trigger-copy" },
+          createThemeSwatch(theme.swatch),
+          el("span", { "data-theme-trigger-label": "true", text: theme.label })
+        ),
+        el("span", { class: "theme-trigger-caret", "aria-hidden": "true", text: "▾" })
+      );
+      button.addEventListener("click", () => openThemeMenu(button));
+      fieldset.appendChild(button);
+      wrap.appendChild(fieldset);
+      return wrap;
+    }
+
+    if (field.type === "radio" || field.type === "checkboxes" || field.type === "rating") {
+      const fieldset = el("fieldset", { class: "fieldset" });
+      fieldset.appendChild(el("legend", { text: field.label }));
+      if (field.hint) fieldset.appendChild(el("div", { class: "hint", text: field.hint }));
+      const stackClass = "pill-stack" + (field.type === "rating" ? " rating-stack" : "");
       const stack = el("div", { class: stackClass });
       const selectedSet = field.type === "checkboxes" ? new Set(Array.isArray(currentValue) ? currentValue : []) : null;
       const ratingScale = field.scale || [];
@@ -1966,23 +2697,12 @@
             setValue(stateSectionId, field.id, Array.from(next));
           } else {
             setValue(stateSectionId, field.id, optionValue);
-            if (field.type === "theme_picker") applyTheme(optionValue);
             if (fieldHasDependents(sectionId, field.id)) renderAll();
           }
         });
-        let visualBits = null;
-        if (field.type === "theme_picker") {
-          const swatch = el("span", { class: "theme-swatch", "aria-hidden": "true" },
-            el("span"),
-            el("span"),
-            el("span")
-          );
-          visualBits = swatch;
-        }
         labelNode.appendChild(input);
-        labelNode.appendChild(el("span", { class: "pill-label", "data-theme": String(optionValue).toLowerCase() },
+        labelNode.appendChild(el("span", { class: "pill-label" },
           el("span", { class: "pill-check", "aria-hidden": "true", text: "✓" }),
-          visualBits,
           el("span", { class: "pill-copy" }, el("span", { text: String(optionLabel) }))
         ));
         stack.appendChild(labelNode);
@@ -2115,6 +2835,7 @@
     shell.innerHTML = "";
     SECTIONS.forEach((section) => shell.appendChild(renderSection(section)));
     updateProgress();
+    syncThemeButtons(loadTheme());
     wireButtons();
   }
 
@@ -2128,8 +2849,8 @@
   }
 
   function wireButtons() {
-    document.getElementById("downloadTop").onclick = generateAllExports;
     document.getElementById("downloadBottom").onclick = generateAllExports;
+    document.getElementById("shareBottom").onclick = shareAllExports;
     document.getElementById("clearButton").onclick = () => {
       if (window.confirm("Start over and clear every saved answer?")) clearAllAnswers();
     };
@@ -2271,6 +2992,22 @@
     };
   }
 
+  function buildExportArtifacts() {
+    const clean = buildMarkdown(false);
+    const claude = buildMarkdown(true);
+    const json = JSON.stringify(buildJson(), null, 2);
+    return {
+      clean,
+      claude,
+      json,
+      files: [
+        new File([clean], "max-setup-intake-clean.md", { type: "text/markdown;charset=utf-8" }),
+        new File([claude], "max-setup-intake-claude.md", { type: "text/markdown;charset=utf-8" }),
+        new File([json], "max-setup-intake.json", { type: "application/json;charset=utf-8" })
+      ]
+    };
+  }
+
   function downloadFile(filename, content, mime) {
     const blob = new Blob([content], { type: mime + ";charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -2287,13 +3024,44 @@
 
   function generateAllExports() {
     persistState();
-    const clean = buildMarkdown(false);
-    const claude = buildMarkdown(true);
-    const json = buildJson();
-    downloadFile("max-setup-intake-clean.md", clean, "text/markdown");
-    setTimeout(() => downloadFile("max-setup-intake-claude.md", claude, "text/markdown"), 240);
-    setTimeout(() => downloadFile("max-setup-intake.json", JSON.stringify(json, null, 2), "application/json"), 480);
+    const artifacts = buildExportArtifacts();
+    downloadFile("max-setup-intake-clean.md", artifacts.clean, "text/markdown");
+    setTimeout(() => downloadFile("max-setup-intake-claude.md", artifacts.claude, "text/markdown"), 240);
+    setTimeout(() => downloadFile("max-setup-intake.json", artifacts.json, "application/json"), 480);
     toast("Downloaded clean markdown, Claude markdown, and JSON.");
+  }
+
+  function syncShareButton() {
+    const button = document.getElementById("shareBottom");
+    let supported = false;
+    try {
+      supported = typeof File === "function"
+        && !!(navigator.canShare && navigator.canShare({ files: buildExportArtifacts().files }));
+    } catch (error) {
+      supported = false;
+    }
+    button.hidden = !supported;
+  }
+
+  async function shareAllExports() {
+    persistState();
+    try {
+      const artifacts = buildExportArtifacts();
+      if (!navigator.canShare || !navigator.canShare({ files: artifacts.files })) {
+        toast("Native file sharing is not available on this device.");
+        return;
+      }
+      await navigator.share({
+        files: artifacts.files,
+        title: "Max setup intake exports",
+        text: "Clean markdown, Claude markdown, and JSON export."
+      });
+      toast("Opened your device share sheet.");
+    } catch (error) {
+      if (error && error.name === "AbortError") return;
+      console.warn("share failed", error);
+      toast("Could not open the share sheet.");
+    }
   }
 
   function toast(message) {
@@ -2365,9 +3133,28 @@
 
   function init() {
     setValueSilently("pref", "base_theme", loadTheme());
-    renderThemeSwitcher();
+    renderThemeMenu();
     applyTheme(loadTheme(), { persistDraft: false });
     renderAll();
+    document.getElementById("savebarThemeButton").addEventListener("click", function () { openThemeMenu(this); });
+    document.addEventListener("click", (event) => {
+      const menu = document.getElementById("themeMenu");
+      if (!menu.classList.contains("show")) return;
+      if (menu.contains(event.target)) return;
+      if (event.target.closest("[data-theme-trigger]")) return;
+      closeThemeMenu();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeThemeMenu();
+    });
+    window.addEventListener("resize", () => {
+      if (themeMenuAnchor) positionThemeMenu(themeMenuAnchor);
+      updateProgress();
+    });
+    window.addEventListener("scroll", () => {
+      if (themeMenuAnchor) positionThemeMenu(themeMenuAnchor);
+    }, { passive: true });
+    syncShareButton();
     setupResumeFlow();
   }
 
