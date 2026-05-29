@@ -1,0 +1,2378 @@
+<!doctype html>
+<html lang="en" class="theme-sage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max setup intake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  script, style, head, title, meta, link { display: none !important; }
+
+  :root {
+    --bg: #f5f1e8;
+    --bg-accent: rgba(122, 151, 126, 0.06);
+    --panel: #fffdf9;
+    --panel-2: #f8f4ec;
+    --ink: #243028;
+    --ink-soft: #4d5a52;
+    --muted: #6f7b74;
+    --line: #ddd6ca;
+    --line-strong: #c9bfaf;
+    --accent: #6f8d72;
+    --accent-strong: #4d6a54;
+    --accent-soft: #e8efe8;
+    --focus: rgba(79, 108, 85, 0.28);
+    --shadow: 0 16px 40px rgba(48, 54, 45, 0.08);
+    --radius: 18px;
+    --radius-sm: 12px;
+    --display-font: "Instrument Serif", "EB Garamond", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 18px;
+    --section-padding: 26px;
+  }
+
+  :root.theme-sage,
+  :root.theme-midnight,
+  :root.theme-violet,
+  :root.theme-glass,
+  :root.theme-electric,
+  :root.theme-paper,
+  :root.theme-outlook,
+  :root.theme-excel,
+  :root.theme-quickbooks,
+  :root.theme-obsidian,
+  :root.theme-aurora,
+  :root.theme-solar,
+  :root.theme-sunset,
+  :root.theme-ember {
+    --bg: hsl(var(--background));
+    --bg-accent: hsl(var(--primary) / 0.08);
+    --panel: hsl(var(--card));
+    --panel-2: hsl(var(--muted));
+    --ink: hsl(var(--foreground));
+    --ink-soft: hsl(var(--muted-foreground));
+    --muted: hsl(var(--muted-foreground));
+    --line: hsl(var(--border));
+    --line-strong: hsl(var(--foreground) / 0.24);
+    --accent: hsl(var(--primary));
+    --accent-strong: hsl(var(--ring));
+    --accent-soft: hsl(var(--accent));
+    --focus: hsl(var(--ring) / 0.28);
+    --shadow: 0 16px 40px hsl(var(--foreground) / 0.08);
+    --radius-sm: calc(var(--radius) * 0.66);
+    --display-font: "Instrument Serif", "EB Garamond", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 18px;
+    --section-padding: 26px;
+  }
+
+  :root.theme-sage {
+    --background: 42 31% 94%;
+    --foreground: 146 15% 14%;
+    --card: 0 0% 100%;
+    --primary: 124 14% 42%;
+    --muted: 91 21% 93%;
+    --muted-foreground: 154 7% 39%;
+    --accent: 207 18% 90%;
+    --border: 47 18% 80%;
+    --ring: 124 14% 42%;
+    --radius: 18px;
+  }
+
+  :root.theme-midnight {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+    --card: 222 41% 15%;
+    --primary: 214 84% 46%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 22% 70%;
+    --accent: 217 33% 24%;
+    --border: 217 30% 26%;
+    --ring: 214 84% 56%;
+    --radius: 16px;
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --section-gap: 20px;
+    --section-padding: 24px;
+  }
+
+  :root.theme-violet {
+    --background: 270 24% 8%;
+    --foreground: 270 18% 92%;
+    --card: 271 22% 12%;
+    --primary: 263 60% 52%;
+    --muted: 270 18% 16%;
+    --muted-foreground: 268 16% 70%;
+    --accent: 270 24% 22%;
+    --border: 270 18% 24%;
+    --ring: 263 65% 62%;
+    --radius: 16px;
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.32);
+  }
+
+  :root.theme-glass {
+    --background: 222 47% 10%;
+    --foreground: 210 30% 93%;
+    --card: 215 35% 22%;
+    --primary: 199 89% 55%;
+    --muted: 215 28% 20%;
+    --muted-foreground: 210 22% 74%;
+    --accent: 210 32% 30%;
+    --border: 210 30% 60%;
+    --ring: 199 89% 60%;
+    --radius: 16px;
+    --bg-accent: linear-gradient(135deg, hsl(199 89% 55% / 0.12), hsl(270 70% 60% / 0.08));
+    --panel: hsl(var(--card) / 0.7);
+    --panel-2: hsl(var(--muted) / 0.75);
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+  }
+
+  :root.theme-electric {
+    --background: 224 60% 8%;
+    --foreground: 185 22% 92%;
+    --card: 222 47% 13%;
+    --primary: 187 90% 48%;
+    --muted: 213 35% 16%;
+    --muted-foreground: 195 20% 70%;
+    --accent: 190 40% 22%;
+    --border: 207 33% 24%;
+    --ring: 187 90% 55%;
+    --radius: 16px;
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-paper {
+    --background: 210 20% 98%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --primary: 215 65% 42%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 210 30% 92%;
+    --border: 214 20% 86%;
+    --ring: 215 65% 42%;
+    --radius: 18px;
+  }
+
+  :root.theme-outlook {
+    --background: 206 33% 97%;
+    --foreground: 215 30% 18%;
+    --card: 0 0% 100%;
+    --primary: 209 85% 38%;
+    --muted: 210 30% 94%;
+    --muted-foreground: 213 18% 40%;
+    --accent: 209 70% 91%;
+    --border: 210 25% 86%;
+    --ring: 209 85% 45%;
+    --radius: 14px;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-excel {
+    --background: 150 20% 97%;
+    --foreground: 156 25% 15%;
+    --card: 0 0% 100%;
+    --primary: 152 65% 27%;
+    --muted: 150 18% 94%;
+    --muted-foreground: 153 13% 37%;
+    --accent: 150 45% 90%;
+    --border: 150 18% 85%;
+    --ring: 152 65% 31%;
+    --radius: 8px;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-quickbooks {
+    --background: 120 18% 97%;
+    --foreground: 140 22% 15%;
+    --card: 0 0% 100%;
+    --primary: 112 60% 29%;
+    --muted: 120 14% 94%;
+    --muted-foreground: 130 11% 37%;
+    --accent: 115 42% 90%;
+    --border: 120 16% 85%;
+    --ring: 112 60% 33%;
+    --radius: 20px;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-obsidian {
+    --background: 0 0% 3%;
+    --foreground: 240 7% 95%;
+    --card: 240 6% 7%;
+    --primary: 0 72% 51%;
+    --muted: 240 4% 11%;
+    --muted-foreground: 240 1% 55%;
+    --accent: 349 38% 11%;
+    --border: 240 4% 12%;
+    --ring: 0 72% 58%;
+    --radius: 18px;
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-aurora {
+    --background: 225 44% 97%;
+    --foreground: 220 39% 11%;
+    --card: 0 0% 100%;
+    --primary: 258 68% 42%;
+    --muted: 225 38% 92%;
+    --muted-foreground: 215 18% 41%;
+    --accent: 253 53% 95%;
+    --border: 214 32% 90%;
+    --ring: 258 68% 48%;
+    --radius: 18px;
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-solar {
+    --background: 42 83% 96%;
+    --foreground: 29 39% 12%;
+    --card: 40 100% 98%;
+    --primary: 34 95% 33%;
+    --muted: 40 62% 91%;
+    --muted-foreground: 30 20% 39%;
+    --accent: 46 93% 89%;
+    --border: 38 58% 84%;
+    --ring: 34 95% 38%;
+    --radius: 18px;
+    --display-font: "EB Garamond", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-sunset {
+    --background: 285 28% 11%;
+    --foreground: 30 32% 92%;
+    --card: 287 24% 16%;
+    --primary: 22 92% 58%;
+    --muted: 286 18% 21%;
+    --muted-foreground: 30 22% 74%;
+    --accent: 12 48% 30%;
+    --border: 286 18% 27%;
+    --ring: 22 92% 58%;
+    --radius: 18px;
+    --shadow: 0 20px 44px rgba(0, 0, 0, 0.34);
+    --display-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :root.theme-ember {
+    --background: 35 46% 95%;
+    --foreground: 16 40% 16%;
+    --card: 40 60% 99%;
+    --primary: 12 74% 40%;
+    --muted: 36 38% 90%;
+    --muted-foreground: 22 30% 34%;
+    --accent: 36 68% 86%;
+    --border: 34 32% 82%;
+    --ring: 12 74% 40%;
+    --radius: 18px;
+    --display-font: "EB Garamond", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at top left, var(--bg-accent), transparent 34%),
+      linear-gradient(180deg, var(--bg), var(--bg));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--accent-strong); }
+
+  button, input, textarea, select {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+
+  .savebar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .savebar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .save-chip,
+  .progress-chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    border-radius: 999px;
+    color: var(--ink-soft);
+  }
+
+  .save-chip strong,
+  .progress-chip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .save-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px var(--accent-soft);
+    flex: 0 0 auto;
+  }
+
+  .theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-left: auto;
+  }
+
+  .theme-label {
+    color: var(--muted);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .theme-options {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .theme-option {
+    position: relative;
+  }
+
+  .theme-option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .theme-option label {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--ink);
+    transition: border-color 140ms ease, transform 140ms ease, background 140ms ease;
+  }
+
+  .theme-option input:checked + label {
+    border-color: var(--accent-strong);
+    box-shadow: 0 0 0 3px var(--focus);
+  }
+
+  .theme-option input:focus-visible + label {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .theme-swatch {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 10px);
+    gap: 2px;
+  }
+
+  .theme-swatch span {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    display: block;
+  }
+
+  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(1) { background: #f5f1e8; border: 1px solid #d8cfbf; }
+  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(2) { background: #6f8d72; }
+  .theme-option[data-theme="sage"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="sage"] .theme-swatch span:nth-child(3) { background: #243028; }
+  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(1) { background: #142035; }
+  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(2) { background: #256ee7; }
+  .theme-option[data-theme="midnight"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="midnight"] .theme-swatch span:nth-child(3) { background: #e4eaf0; border: 1px solid #bec8d2; }
+  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(1) { background: #16101a; }
+  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(2) { background: #7046cf; }
+  .theme-option[data-theme="violet"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="violet"] .theme-swatch span:nth-child(3) { background: #ebe6ef; border: 1px solid #bfb2c9; }
+  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(1) { background: linear-gradient(135deg, #16223b, #292044); }
+  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(2) { background: #38baeb; }
+  .theme-option[data-theme="glass"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="glass"] .theme-swatch span:nth-child(3) { background: rgba(231, 240, 247, 0.9); border: 1px solid #bfd1de; }
+  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(1) { background: #0d162d; }
+  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(2) { background: #0fe0e8; }
+  .theme-option[data-theme="electric"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="electric"] .theme-swatch span:nth-child(3) { background: #e5eef0; border: 1px solid #bad0d4; }
+  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(1) { background: #f8fafc; border: 1px solid #d6dee6; }
+  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(2) { background: #2c5fb2; }
+  .theme-option[data-theme="paper"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="paper"] .theme-swatch span:nth-child(3) { background: #202d3a; }
+  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(1) { background: #f3f8fb; border: 1px solid #d4e0e9; }
+  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(2) { background: #0f68b3; }
+  .theme-option[data-theme="outlook"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="outlook"] .theme-swatch span:nth-child(3) { background: #223247; }
+  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(1) { background: #f4faf7; border: 1px solid #d0dfd7; }
+  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(2) { background: #187244; }
+  .theme-option[data-theme="excel"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="excel"] .theme-swatch span:nth-child(3) { background: #1e3027; }
+  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(1) { background: #f5faf5; border: 1px solid #d3e0d3; }
+  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(2) { background: #419431; }
+  .theme-option[data-theme="quickbooks"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="quickbooks"] .theme-swatch span:nth-child(3) { background: #203025; }
+  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(1) { background: #080808; }
+  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(2) { background: #dc2c2c; }
+  .theme-option[data-theme="obsidian"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="obsidian"] .theme-swatch span:nth-child(3) { background: #f2f2f4; border: 1px solid #d0d0d5; }
+  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(1) { background: #f3f5fc; border: 1px solid #d8ddef; }
+  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(2) { background: #6843b4; }
+  .theme-option[data-theme="aurora"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="aurora"] .theme-swatch span:nth-child(3) { background: #1a2440; }
+  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(1) { background: #fff6e8; border: 1px solid #e7d6b8; }
+  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(2) { background: #a56404; }
+  .theme-option[data-theme="solar"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="solar"] .theme-swatch span:nth-child(3) { background: #352314; }
+  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(1) { background: #24182b; }
+  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(2) { background: #f67f2f; }
+  .theme-option[data-theme="sunset"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="sunset"] .theme-swatch span:nth-child(3) { background: #f0e6dd; border: 1px solid #d0bca9; }
+  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(1),
+  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(1) { background: #f4ede4; border: 1px solid #ddcbb6; }
+  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(2),
+  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(2) { background: #b24f2e; }
+  .theme-option[data-theme="ember"] .theme-swatch span:nth-child(3),
+  .pill-label[data-theme="ember"] .theme-swatch span:nth-child(3) { background: #46281d; }
+
+  .save-actions {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    min-height: 44px;
+    border-radius: 999px;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    transition: background 140ms ease, border-color 140ms ease, color 140ms ease, transform 140ms ease;
+  }
+
+  .button:hover {
+    border-color: var(--accent-strong);
+    background: var(--accent-soft);
+  }
+
+  .button.primary {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: #fff;
+  }
+
+  .button.primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .hero {
+    padding: 34px 0 18px;
+  }
+
+  .hero-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    font-family: var(--display-font);
+    line-height: 1.06;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3.65rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .hero-copy p,
+  .hero-note p,
+  .section-intro {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.06rem;
+  }
+
+  .hero-copy p + p {
+    margin-top: 12px;
+  }
+
+  .hero-note {
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    border-radius: calc(var(--radius) - 4px);
+    padding: 18px;
+  }
+
+  .hero-note strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 0.98rem;
+  }
+
+  .form-shell {
+    display: grid;
+    gap: 16px;
+  }
+
+  .section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--section-padding);
+    display: grid;
+    gap: var(--section-gap);
+  }
+
+  .section-head {
+    display: grid;
+    gap: 8px;
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-kicker strong {
+    color: var(--accent-strong);
+  }
+
+  .section h2 {
+    font-size: clamp(1.65rem, 3.1vw, 2.35rem);
+  }
+
+  .field-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .row-2,
+  .row-3 {
+    display: grid;
+    gap: 16px;
+  }
+
+  .row-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .field {
+    display: grid;
+    gap: 8px;
+  }
+
+  .field label,
+  .field legend {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--panel);
+    color: var(--ink);
+    padding: 12px 14px;
+    transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  }
+
+  textarea {
+    min-height: 124px;
+    resize: vertical;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--muted);
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--accent-strong);
+    box-shadow: 0 0 0 4px var(--focus);
+  }
+
+  .pill-stack,
+  .rating-stack,
+  .theme-radio-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pill-stack label { position: relative; }
+  .pill-stack input {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  .pill-stack .pill-label,
+  .theme-radio-stack .pill-label {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    padding: 11px 14px;
+    color: var(--ink);
+    transition: background 140ms ease, border-color 140ms ease, color 140ms ease, transform 140ms ease;
+  }
+
+  .pill-stack input:checked + .pill-label,
+  .theme-radio-stack input:checked + .pill-label {
+    border-color: var(--accent-strong);
+    background: var(--accent-soft);
+    color: var(--ink);
+    box-shadow: 0 0 0 3px var(--focus);
+  }
+
+  .pill-stack input:focus-visible + .pill-label,
+  .theme-radio-stack input:focus-visible + .pill-label {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .pill-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+    color: transparent;
+    flex: 0 0 auto;
+  }
+
+  .pill-stack input:checked + .pill-label .pill-check,
+  .theme-radio-stack input:checked + .pill-label .pill-check {
+    color: var(--accent-strong);
+    border-color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent-soft) 65%, white);
+  }
+
+  .pill-copy {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pill-copy small {
+    color: var(--muted);
+    font-size: 0.87rem;
+  }
+
+  .rating-stack .pill-label {
+    min-width: 52px;
+    justify-content: center;
+  }
+
+  .swatch-pair {
+    display: inline-flex;
+    gap: 4px;
+  }
+
+  .swatch-pair span {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.14);
+  }
+
+  .checklist-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .inline-extra {
+    margin-top: 4px;
+  }
+
+  .repeater {
+    display: grid;
+    gap: 12px;
+  }
+
+  .repeater-row {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    border-radius: 16px;
+    padding: 14px;
+  }
+
+  .repeater-row.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) 48px; }
+  .repeater-row.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) 48px; }
+
+  .repeater-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mini-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .icon-button {
+    min-height: 44px;
+    min-width: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink);
+    font-size: 1.15rem;
+  }
+
+  .bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .muted-note {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 16, 24, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    z-index: 80;
+  }
+
+  .modal-backdrop.show {
+    display: flex;
+  }
+
+  .modal {
+    width: min(100%, 520px);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+  }
+
+  .modal h2 {
+    font-size: 1.85rem;
+    margin-bottom: 10px;
+  }
+
+  .modal p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .toast {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 90;
+    min-width: 240px;
+    max-width: 360px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  :root.theme-glass body {
+    background:
+      radial-gradient(circle at top left, hsl(199 89% 55% / 0.12), transparent 34%),
+      linear-gradient(135deg, hsl(222 47% 10%), hsl(250 38% 14%) 52%, hsl(205 46% 13%));
+    background-attachment: fixed;
+  }
+
+  :root.theme-midnight .button.primary:hover,
+  :root.theme-violet .button.primary:hover,
+  :root.theme-glass .button.primary:hover,
+  :root.theme-electric .button.primary:hover,
+  :root.theme-obsidian .button.primary:hover,
+  :root.theme-sunset .button.primary:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+    border-color: hsl(var(--foreground));
+  }
+
+  :root.theme-midnight input[type="text"],
+  :root.theme-midnight input[type="number"],
+  :root.theme-midnight input[type="date"],
+  :root.theme-midnight input[type="time"],
+  :root.theme-midnight textarea,
+  :root.theme-midnight .pill-stack .pill-label,
+  :root.theme-midnight .theme-radio-stack .pill-label,
+  :root.theme-midnight .theme-option label,
+  :root.theme-midnight .icon-button,
+  :root.theme-midnight .button,
+  :root.theme-midnight .save-chip,
+  :root.theme-midnight .progress-chip,
+  :root.theme-violet input[type="text"],
+  :root.theme-violet input[type="number"],
+  :root.theme-violet input[type="date"],
+  :root.theme-violet input[type="time"],
+  :root.theme-violet textarea,
+  :root.theme-violet .pill-stack .pill-label,
+  :root.theme-violet .theme-radio-stack .pill-label,
+  :root.theme-violet .theme-option label,
+  :root.theme-violet .icon-button,
+  :root.theme-violet .button,
+  :root.theme-violet .save-chip,
+  :root.theme-violet .progress-chip,
+  :root.theme-glass input[type="text"],
+  :root.theme-glass input[type="number"],
+  :root.theme-glass input[type="date"],
+  :root.theme-glass input[type="time"],
+  :root.theme-glass textarea,
+  :root.theme-glass .pill-stack .pill-label,
+  :root.theme-glass .theme-radio-stack .pill-label,
+  :root.theme-glass .theme-option label,
+  :root.theme-glass .icon-button,
+  :root.theme-glass .button,
+  :root.theme-glass .save-chip,
+  :root.theme-glass .progress-chip,
+  :root.theme-electric input[type="text"],
+  :root.theme-electric input[type="number"],
+  :root.theme-electric input[type="date"],
+  :root.theme-electric input[type="time"],
+  :root.theme-electric textarea,
+  :root.theme-electric .pill-stack .pill-label,
+  :root.theme-electric .theme-radio-stack .pill-label,
+  :root.theme-electric .theme-option label,
+  :root.theme-electric .icon-button,
+  :root.theme-electric .button,
+  :root.theme-electric .save-chip,
+  :root.theme-electric .progress-chip,
+  :root.theme-obsidian input[type="text"],
+  :root.theme-obsidian input[type="number"],
+  :root.theme-obsidian input[type="date"],
+  :root.theme-obsidian input[type="time"],
+  :root.theme-obsidian textarea,
+  :root.theme-obsidian .pill-stack .pill-label,
+  :root.theme-obsidian .theme-radio-stack .pill-label,
+  :root.theme-obsidian .theme-option label,
+  :root.theme-obsidian .icon-button,
+  :root.theme-obsidian .button,
+  :root.theme-obsidian .save-chip,
+  :root.theme-obsidian .progress-chip,
+  :root.theme-sunset input[type="text"],
+  :root.theme-sunset input[type="number"],
+  :root.theme-sunset input[type="date"],
+  :root.theme-sunset input[type="time"],
+  :root.theme-sunset textarea,
+  :root.theme-sunset .pill-stack .pill-label,
+  :root.theme-sunset .theme-radio-stack .pill-label,
+  :root.theme-sunset .theme-option label,
+  :root.theme-sunset .icon-button,
+  :root.theme-sunset .button,
+  :root.theme-sunset .save-chip,
+  :root.theme-sunset .progress-chip {
+    background: var(--panel);
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid,
+    .row-2,
+    .row-3,
+    .repeater-row.cols-2,
+    .repeater-row.cols-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .theme-switcher {
+      margin-left: 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="savebar">
+    <div class="savebar-inner">
+      <div class="save-chip" aria-live="polite">
+        <span class="save-dot" aria-hidden="true"></span>
+        <span><strong>Saved</strong> <span id="saveStatus">Not saved yet</span></span>
+      </div>
+      <div class="theme-switcher" aria-label="Theme switcher">
+        <span class="theme-label">Theme</span>
+        <div class="theme-options" id="themeSwitcher"></div>
+      </div>
+      <div class="progress-chip" aria-live="polite">
+        <strong id="progressCount">0 of 0 answered</strong>
+      </div>
+      <div class="save-actions">
+        <button type="button" class="button" id="clearButton">Start over</button>
+        <button type="button" class="button primary" id="downloadTop">Download all three</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Setup Intake</div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>Max’s dashboard + Claude setup, before the call.</h1>
+            <p>This sets up your dashboard and your Claude before our call. It should take about 20–25 minutes, saves as you go, and the more specific you are here, the more dialed-in the first build can be.</p>
+            <p>You can switch the color theme in the top-right at any point. Nothing here is fragile; if you stop midway, your place and answers will still be here when you come back.</p>
+          </div>
+          <aside class="hero-note">
+            <strong>What this feeds</strong>
+            <p>A setup package for getting Claude working cleanly on your machine, plus a live-synced home base that keeps school, LSAT/application work, lifeguarding, and general life in one place.</p>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <main id="formShell" class="form-shell"></main>
+
+    <div class="bottom-actions">
+      <p class="muted-note">Exports include a clean copy for you, a Claude-tagged copy for the downstream build, and machine-readable JSON with the full slot-map.</p>
+      <button type="button" class="button primary" id="downloadBottom">Download all three</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="resumeModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+      <h2 id="resumeTitle">Welcome back.</h2>
+      <p>Continue where you left off, or start over?</p>
+      <div class="modal-actions">
+        <button type="button" class="button primary" id="resumeContinue">Continue</button>
+        <button type="button" class="button" id="resumeReset">Start over</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+<script>
+(function () {
+  const STORAGE_KEY = "max-setup-intake-2026-05-28";
+  const THEME_KEY = "max-setup-intake-theme-2026-05-28";
+  const THEMES = ["sage", "midnight", "violet", "glass", "electric", "paper", "outlook", "excel", "quickbooks", "obsidian", "aurora", "solar", "sunset", "ember"];
+  const THEME_CHOICES = [
+    { value: "sage", label: "Sage" },
+    { value: "midnight", label: "Midnight" },
+    { value: "violet", label: "Violet" },
+    { value: "glass", label: "Glass" },
+    { value: "electric", label: "Electric" },
+    { value: "paper", label: "Paper" },
+    { value: "outlook", label: "Outlook" },
+    { value: "excel", label: "Excel" },
+    { value: "quickbooks", label: "QuickBooks" },
+    { value: "obsidian", label: "Obsidian" },
+    { value: "aurora", label: "Aurora" },
+    { value: "solar", label: "Solar" },
+    { value: "sunset", label: "Sunset" },
+    { value: "ember", label: "Ember" }
+  ];
+  const STATE = {};
+  let pendingDraft = null;
+  let saveTimer = null;
+
+  const SECTIONS = [
+    {
+      id: "goals",
+      title: "What you want this for",
+      kicker: "Section 1",
+      emphasis: "High-signal first",
+      intro: "Your law-school path is the through-line here, so this section does the heavy lifting first.",
+      fields: [
+        {
+          id: "base_theme",
+          stateSection: "pref",
+          type: "theme_picker",
+          label: "Design theme",
+          hint: "This sets the home base theme default and re-themes this intake immediately. The savebar switcher stays in sync.",
+          options: THEME_CHOICES,
+          drives: "base theme of the home base + any artifact this intake feeds"
+        },
+        {
+          id: "through_line",
+          type: "textarea",
+          label: "Your law-school path is the through-line for all of this. In a sentence or two: what does the next year look like, and what's the one thing you most want to stay on top of?",
+          rows: 5,
+          drives: "dashboard hero through-line (verbatim), spotlight tile"
+        },
+        {
+          id: "top_priorities",
+          type: "multiselect_with_text",
+          label: "Top priorities",
+          options: [
+            "Keep my GPA up",
+            "Stay on the LSAT timeline",
+            "Hit application deadlines",
+            "Manage lifeguard shifts/certs",
+            "Stay on top of email",
+            "General life organization"
+          ],
+          extraLabel: "Anything else",
+          extraPlaceholder: "Optional",
+          drives: "action-queue seeding, spotlight priority"
+        },
+        {
+          id: "daily_glance",
+          type: "checkboxes",
+          label: "When you open this once a day, what do you most want to see instantly?",
+          options: [
+            "today's deadlines",
+            "top emails",
+            "next calendar event",
+            "grade changes",
+            "LSAT countdown",
+            "lifeguard shifts",
+            "Claude session status"
+          ],
+          drives: "Home bento tile selection"
+        }
+      ]
+    },
+    {
+      id: "profile",
+      title: "Basic profile",
+      kicker: "Section 2",
+      intro: "Core context for how the setup package and the dashboard should be calibrated.",
+      fields: [
+        { row: [
+          { id: "name", type: "text", label: "Name", drives: "hero greeting, callout prefix, footer" },
+          { id: "school", type: "text", label: "School", drives: "profile/context" }
+        ]},
+        { row: [
+          { id: "year", type: "radio", label: "Year", options: ["1st", "2nd", "3rd", "4th", "grad", "other"], drives: "calibration" },
+          { id: "major", type: "text", label: "Major", drives: "course context" }
+        ]},
+        { row: [
+          { id: "current_gpa", type: "text", label: "Current GPA", drives: "GPA tracker baseline" },
+          { id: "os", type: "radio", label: "Operating system", options: ["Mac", "Windows"], drives: "ENTIRE dashboard port path (launcher, file paths, email/calendar source)" }
+        ]}
+      ]
+    },
+    {
+      id: "courses",
+      title: "Courses",
+      kicker: "Section 3",
+      intro: "One row per course. You can add up to eight.",
+      fields: [
+        {
+          id: "rows",
+          type: "repeater",
+          label: "Courses",
+          cap: 8,
+          addLabel: "Add another course",
+          columns: [
+            { id: "course_name", label: "Course name", type: "text", placeholder: "PSYCH 104" },
+            { id: "current_grade", label: "Current grade", type: "text", placeholder: "86%" },
+            { id: "weight_pct", label: "weight % — optional", type: "text", placeholder: "25%" },
+            { id: "target_grade", label: "Target grade", type: "text", placeholder: "90%" }
+          ],
+          drives: "course-tracker module (one row per course, current vs target, weight for GPA projection)"
+        }
+      ]
+    },
+    {
+      id: "law",
+      title: "Law school prep",
+      kicker: "Section 4",
+      intro: "This is the organizing through-line for the build, so the dashboard needs a clear picture of pace, targets, and what to surface.",
+      fields: [
+        {
+          id: "target_schools",
+          type: "multiline_list",
+          label: "Target schools",
+          hint: "One school per line, up to five.",
+          rows: 5,
+          maxItems: 5,
+          drives: "per-school application-deadline tracking"
+        },
+        {
+          id: "lsat_status",
+          type: "radio",
+          label: "LSAT status",
+          options: ["not started", "studying", "registered", "taken", "retaking"],
+          drives: "LSAT module state"
+        },
+        { row: [
+          {
+            id: "lsat_test_date",
+            type: "date",
+            label: "LSAT test date",
+            showWhen: { field: "lsat_status", notEquals: "not started" },
+            drives: "LSAT countdown tile"
+          },
+          {
+            id: "lsat_target_score",
+            type: "text",
+            label: "LSAT target score",
+            showWhen: { field: "lsat_status", notEquals: "not started" },
+            drives: "LSAT goal"
+          }
+        ]},
+        {
+          id: "gpa_target",
+          type: "text",
+          label: "GPA target",
+          showWhen: { field: "lsat_status", notEquals: "not started" },
+          drives: "GPA tracker target line"
+        },
+        {
+          id: "timeline_confidence",
+          type: "rating",
+          label: "How on top of the application timeline do you feel?",
+          scale: [1, 2, 3, 4, 5],
+          drives: "scaffolding depth for the law module"
+        },
+        {
+          id: "track_items",
+          type: "checkboxes",
+          label: "What should the dashboard track for law-school prep?",
+          options: [
+            "LSAT countdown",
+            "application deadlines per school",
+            "letters of rec status",
+            "personal statement drafts",
+            "CAS/transcript status"
+          ],
+          drives: "which law sub-widgets to build (incl. LSAC/CAS integration build)"
+        }
+      ]
+    },
+    {
+      id: "disk",
+      title: "Your work, on disk",
+      kicker: "Section 5",
+      intro: "If your real work already lives in folders, the dashboard can walk that structure instead of making you maintain duplicate tabs by hand.",
+      fields: [
+        {
+          id: "has_folders",
+          type: "radio",
+          label: "Do your course or law-school files already live in folders on your computer?",
+          options: ["Yes, my course/law-school files live in folders on my computer", "No / not organized that way / not sure"],
+          drives: "whether to build filesystem-walked tabs"
+        },
+        {
+          id: "areas",
+          type: "repeater",
+          label: "Areas to walk from disk",
+          cap: 5,
+          addLabel: "Add another area",
+          showWhen: { field: "has_folders", equals: "Yes, my course/law-school files live in folders on my computer" },
+          columns: [
+            { id: "area_label", label: "Area label", type: "text", placeholder: "Courses" },
+            { id: "folder_path", label: "Rough folder path", type: "text", placeholder: "~/School/Fall2026" }
+          ],
+          drives: "which folders the dashboard walks to auto-populate course/application/document tabs"
+        }
+      ]
+    },
+    {
+      id: "guard",
+      title: "Lifeguarding",
+      kicker: "Section 6",
+      intro: "Enough detail to shape shift tracking and certification reminders without adding noise.",
+      fields: [
+        {
+          id: "schedule_type",
+          type: "radio",
+          label: "Schedule type",
+          options: ["fixed weekly", "variable", "via an app"],
+          drives: "shift-tracking widget shape"
+        },
+        {
+          id: "certs",
+          type: "checkboxes",
+          label: "Certifications",
+          options: ["NLS", "Standard First Aid + CPR-C", "Bronze Cross", "Pool/Waterfront", "Instructor", "Other"],
+          drives: "cert tracker"
+        },
+        {
+          id: "track_expiry",
+          type: "radio",
+          label: "Track certification expiry dates?",
+          options: ["yes", "no"],
+          drives: "cert-expiry reminders"
+        },
+        {
+          id: "cert_expiry",
+          type: "repeater",
+          label: "Certification expiry dates",
+          cap: 4,
+          addLabel: "Add certification expiry",
+          showWhen: { field: "track_expiry", equals: "yes" },
+          columns: [
+            { id: "cert_name", label: "Certification", type: "text", placeholder: "NLS" },
+            { id: "expiry_date", label: "Expiry date", type: "date" }
+          ],
+          drives: "cert-expiry reminders"
+        },
+        {
+          id: "hours_goal",
+          type: "text",
+          label: "Hours toward a goal, if any",
+          drives: "hours-progress widget"
+        }
+      ]
+    },
+    {
+      id: "life",
+      title: "General life",
+      kicker: "Section 7",
+      intro: "Only the categories worth reserving space for on the dashboard.",
+      fields: [
+        {
+          id: "track",
+          type: "multiselect_with_text",
+          label: "What else should the dashboard help track?",
+          options: ["habits", "fitness/training", "finances/budget", "reading", "side projects", "social/events"],
+          extraLabel: "Anything else",
+          extraPlaceholder: "Optional",
+          drives: "general-life module widgets"
+        },
+        {
+          id: "notes",
+          type: "textarea",
+          label: "Anything else you'd want this dashboard to help you keep track of?",
+          rows: 4,
+          drives: "extra modules / scope-up"
+        }
+      ]
+    },
+    {
+      id: "int",
+      title: "Integrations / accounts",
+      kicker: "Section 8",
+      intro: "These choices drive how much of the dashboard can sync live and where the build has to do heavier lifting.",
+      fields: [
+        {
+          id: "email_provider",
+          type: "checkboxes",
+          label: "Email provider",
+          options: ["Gmail", "Outlook (Microsoft 365)", "Apple Mail", "Other"],
+          drives: "email data-source wiring"
+        },
+        {
+          id: "email_accounts",
+          type: "text",
+          label: "How many email accounts?",
+          drives: "account chips"
+        },
+        {
+          id: "email_actionability",
+          type: "radio",
+          label: "What should the dashboard do with email?",
+          options: ["Just see & triage email", "Also compose, reply, and send from the dashboard"],
+          drives: "read-only vs actionable email module + Gmail send consent flow"
+        },
+        {
+          id: "send_consent",
+          type: "radio",
+          label: "If we wire sending, are you willing to sign in during the call so it works live?",
+          options: ["Yes, I'll sign in during the call so sending works live", "Set it up read-only for now"],
+          showWhen: { field: "email_actionability", equals: "Also compose, reply, and send from the dashboard" },
+          drives: "whether the send flow is wired in the first build"
+        },
+        {
+          id: "calendar",
+          type: "checkboxes",
+          label: "Calendar",
+          options: ["Google Calendar", "Apple Calendar", "Outlook"],
+          drives: "calendar data-source"
+        },
+        {
+          id: "lms",
+          type: "radio",
+          label: "Learning management system",
+          options: ["Canvas", "Brightspace", "Blackboard", "Moodle", "Other", "None"],
+          drives: "grade-sync integration"
+        },
+        {
+          id: "notes_tool",
+          type: "checkboxes",
+          label: "Notes tool",
+          options: ["Notion", "Obsidian", "Apple Notes", "Google Docs", "Other"],
+          drives: "notes integration + setup tier signal (existing_obsidian_user)"
+        },
+        {
+          id: "setup_tab_seeds",
+          type: "checkboxes",
+          label: "Which accounts should the dashboard's Set-up tab be ready to connect?",
+          options: ["additional email inboxes", "Google Calendar", "Apple Calendar", "Canvas (or other LMS)", "a booking link", "cloud storage"],
+          drives: "the Set-up tab recommendation cards"
+        },
+        {
+          id: "track_claude_sessions",
+          type: "radio",
+          label: "Track my Claude Cowork + CLI sessions on the dashboard?",
+          options: ["yes", "no"],
+          drives: "sessions module on/off"
+        }
+      ]
+    },
+    {
+      id: "pref",
+      title: "Dashboard preferences",
+      kicker: "Section 9",
+      intro: "Preferences here set the first-pass visual and refresh defaults for the dashboard build.",
+      fields: [
+        {
+          id: "layout",
+          type: "radio",
+          label: "Layout",
+          options: ["Bright (bento grid)", "Focus (dense list)", "no preference"],
+          drives: "default layout"
+        },
+        {
+          id: "refresh",
+          type: "radio",
+          label: "Refresh model",
+          options: ["live auto-refresh", "on-open only", "manual button"],
+          drives: "refresh model"
+        },
+        {
+          id: "sensory",
+          type: "textarea",
+          label: "Any color, contrast, or font-size needs?",
+          rows: 3,
+          drives: "accessibility overrides"
+        }
+      ]
+    },
+    {
+      id: "ai",
+      title: "Your assistant",
+      kicker: "Section 10",
+      intro: "This decides whether the dashboard gets its own in-app assistant, what engine it should use, and how strict the boundary around your files and sensitive material needs to be.",
+      fields: [
+        {
+          id: "want_assistant",
+          type: "radio",
+          label: "Do you want an in-app assistant inside the dashboard?",
+          options: ["Yes, a named in-app assistant", "No, just the dashboards"],
+          drives: "whether to build the Zeus-equivalent assistant"
+        },
+        {
+          id: "assistant_name",
+          type: "text",
+          label: "Name it? (skip = 'Assistant')",
+          placeholder: "Optional",
+          showWhen: { field: "want_assistant", equals: "Yes, a named in-app assistant" },
+          drives: "assistant name + avatar slot"
+        },
+        {
+          id: "engine",
+          type: "radio",
+          label: "How should that assistant run?",
+          hint: "Either way, the assistant can only ever summarize your real data - it never makes up grades, deadlines, or numbers.",
+          options: ["Smartest - cloud AI (Claude Haiku, tiny ongoing cost)", "Free & private - local only (works offline, no key)", "Both - cloud when online, local fallback (recommended)"],
+          showWhen: { field: "want_assistant", equals: "Yes, a named in-app assistant" },
+          drives: "Zeus dual-engine config (cloud-primary + Ollama fallback vs local-only)"
+        },
+        {
+          id: "data_sensitivity",
+          type: "radio",
+          label: "How sensitive is the material this assistant would sit around?",
+          options: ["Some of this is sensitive (law-school materials, grades, personal docs)", "Nothing sensitive"],
+          showWhen: { field: "want_assistant", equals: "Yes, a named in-app assistant" },
+          drives: "anti-fabrication strictness + security posture + the AI helper never reads sensitive files directly boundary"
+        }
+      ]
+    },
+    {
+      id: "log",
+      title: "Logistics",
+      kicker: "Section 11",
+      intro: "This last section determines how much can be wired live during session one and what tier of setup path to prepare.",
+      fields: [
+        { row: [
+          { id: "call_time", type: "text", label: "What time is our call today?", drives: "call logistics" },
+          { id: "time_available", type: "radio", label: "Time available", options: ["30 min", "60 min", "90+ min"], drives: "session scoping" }
+        ]},
+        {
+          id: "oauth_willing",
+          type: "radio",
+          label: "OAuth during the call",
+          options: ["Happy to sign into my accounts during the call so it's wired live", "Let's discuss first"],
+          drives: "how much live wiring happens in session 1 (ready-to-ship goal)"
+        },
+        {
+          id: "claude_installed",
+          type: "radio",
+          label: "Claude installed?",
+          options: ["not yet", "already installed"],
+          drives: "setup tier-determination"
+        },
+        {
+          id: "session_plan",
+          type: "radio",
+          label: "Session plan",
+          options: ["one session", "multiple sessions"],
+          drives: "setup tier-determination"
+        }
+      ]
+    },
+    {
+      id: "claude",
+      title: "Your Claude (beyond the dashboard)",
+      kicker: "Section 12",
+      intro: "This seeds durable Claude memory, working style, and the setup protocol so the system is useful beyond the dashboard itself.",
+      fields: [
+        {
+          id: "about_you",
+          type: "textarea",
+          label: "What should your Claude know about you to be genuinely useful - your situation, goals, how you think, what you're working toward?",
+          rows: 7,
+          drives: "memory/memory.md About Max seed"
+        },
+        {
+          id: "working_style",
+          type: "multiselect_with_text",
+          label: "How do you like to be worked with?",
+          options: ["be direct", "explain reasoning", "push back when I'm wrong", "keep it concise", "ask before big changes"],
+          extraLabel: "Anything else",
+          extraPlaceholder: "Optional",
+          drives: "how-to-work-with-max tone rules"
+        },
+        {
+          id: "use_cases",
+          type: "multiselect_with_text",
+          label: "What will you use Claude for broadly?",
+          options: ["school work", "law-school prep", "writing", "research", "coding", "life organization"],
+          extraLabel: "Other",
+          extraPlaceholder: "Optional",
+          drives: "skill selection for the transplant"
+        },
+        {
+          id: "shared_account",
+          type: "radio",
+          label: "Do you share your Claude account with anyone else?",
+          options: ["I share my Claude account with others", "It's just mine"],
+          drives: "memory-in-vault-files vs Desktop-memory decision"
+        }
+      ]
+    }
+  ];
+
+  function el(tag, attrs = {}, ...children) {
+    const node = document.createElement(tag);
+    Object.entries(attrs).forEach(([key, value]) => {
+      if (value === null || value === undefined) return;
+      if (key === "class") node.className = value;
+      else if (key === "html") node.innerHTML = value;
+      else if (key === "text") node.textContent = value;
+      else if (key.startsWith("on")) node.addEventListener(key.slice(2), value);
+      else node.setAttribute(key, value);
+    });
+    children.flat().forEach((child) => {
+      if (child === null || child === undefined) return;
+      if (typeof child === "string") node.appendChild(document.createTextNode(child));
+      else node.appendChild(child);
+    });
+    return node;
+  }
+
+  function hasPersistedContent(candidate) {
+    if (!candidate || typeof candidate !== "object") return false;
+    return SECTIONS.some((section) => Object.values(candidate[section.id] || {}).some(valueIsFilled));
+  }
+
+  function fieldSectionId(sectionId, field) {
+    return field.stateSection || sectionId;
+  }
+
+  function fieldPath(sectionId, field) {
+    return fieldSectionId(sectionId, field) + "." + field.id;
+  }
+
+  function valueIsFilled(value) {
+    if (value === null || value === undefined) return false;
+    if (typeof value === "string") return value.trim().length > 0;
+    if (typeof value === "number") return true;
+    if (Array.isArray(value)) return value.some(valueIsFilled);
+    if (typeof value === "object") return Object.values(value).some(valueIsFilled);
+    return false;
+  }
+
+  function getSectionState(sectionId) {
+    if (!STATE[sectionId]) STATE[sectionId] = {};
+    return STATE[sectionId];
+  }
+
+  function getValue(sectionId, fieldId) {
+    return STATE[sectionId] ? STATE[sectionId][fieldId] : undefined;
+  }
+
+  function setValueSilently(sectionId, fieldId, value) {
+    const sectionState = getSectionState(sectionId);
+    if (!valueIsFilled(value)) delete sectionState[fieldId];
+    else sectionState[fieldId] = value;
+    if (Object.keys(sectionState).length === 0) delete STATE[sectionId];
+  }
+
+  function setValue(sectionId, fieldId, value) {
+    const sectionState = getSectionState(sectionId);
+    if (!valueIsFilled(value)) delete sectionState[fieldId];
+    else sectionState[fieldId] = value;
+    if (Object.keys(sectionState).length === 0) delete STATE[sectionId];
+    debouncedSave();
+    updateProgress();
+  }
+
+  function clearAllAnswers() {
+    Object.keys(STATE).forEach((key) => delete STATE[key]);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      console.warn("clear storage failed", error);
+    }
+    updateSaveStatus("Cleared");
+    renderAll();
+  }
+
+  function visibleField(field, sectionId) {
+    if (!field.showWhen) return true;
+    const current = getValue(fieldSectionId(sectionId, field), field.showWhen.field);
+    if (Object.prototype.hasOwnProperty.call(field.showWhen, "equals")) return current === field.showWhen.equals;
+    if (Object.prototype.hasOwnProperty.call(field.showWhen, "notEquals")) return current !== field.showWhen.notEquals;
+    return true;
+  }
+
+  function flattenFields() {
+    const list = [];
+    SECTIONS.forEach((section) => {
+      section.fields.forEach((field) => {
+        if (field.row) {
+          field.row.forEach((subField) => list.push({ section, field: subField }));
+        } else {
+          list.push({ section, field });
+        }
+      });
+    });
+    return list;
+  }
+
+  function progressStats() {
+    let total = 0;
+    let answered = 0;
+    flattenFields().forEach(({ section, field }) => {
+      if (!visibleField(field, section.id)) return;
+      total += 1;
+      if (valueIsFilled(getValue(fieldSectionId(section.id, field), field.id))) answered += 1;
+    });
+    return { total, answered };
+  }
+
+  function updateProgress() {
+    const { answered, total } = progressStats();
+    document.getElementById("progressCount").textContent = answered + " of " + total + " answered";
+  }
+
+  function formatSavedTime(isoString) {
+    const date = new Date(isoString);
+    if (Number.isNaN(date.getTime())) return "just now";
+    return "at " + date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+
+  function updateSaveStatus(text) {
+    document.getElementById("saveStatus").textContent = text;
+  }
+
+  function persistState() {
+    try {
+      const payload = {
+        state: STATE,
+        savedAt: new Date().toISOString()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      updateSaveStatus(formatSavedTime(payload.savedAt));
+    } catch (error) {
+      console.warn("persist failed", error);
+      updateSaveStatus("could not save");
+    }
+  }
+
+  function debouncedSave() {
+    updateSaveStatus("saving...");
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(persistState, 220);
+  }
+
+  function applyTheme(themeName, options = {}) {
+    const persistDraft = options.persistDraft !== false;
+    const theme = THEMES.includes(themeName) ? themeName : "sage";
+    document.documentElement.classList.remove(...THEMES.map((name) => "theme-" + name));
+    document.documentElement.classList.add("theme-" + theme);
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (error) {
+      console.warn("theme save failed", error);
+    }
+    setValueSilently("pref", "base_theme", theme);
+    if (document.getElementById("progressCount")) updateProgress();
+    if (persistDraft && document.getElementById("saveStatus")) debouncedSave();
+    document.querySelectorAll('input[name="themePicker"]').forEach((input) => {
+      input.checked = input.value === theme;
+    });
+    document.querySelectorAll('input[name="pref--base_theme--group"]').forEach((input) => {
+      input.checked = input.value === theme;
+    });
+  }
+
+  function renderThemeSwitcher() {
+    const mount = document.getElementById("themeSwitcher");
+    mount.innerHTML = "";
+    const savedTheme = loadTheme();
+    THEME_CHOICES.forEach((choice) => {
+      const id = "theme-" + choice.value;
+      const wrap = el("div", { class: "theme-option", "data-theme": choice.value });
+      const input = el("input", {
+        type: "radio",
+        id,
+        name: "themePicker",
+        value: choice.value
+      });
+      input.checked = savedTheme === choice.value;
+      input.addEventListener("change", () => applyTheme(choice.value));
+      const label = el("label", { for: id },
+        el("span", { class: "theme-swatch", "aria-hidden": "true" },
+          el("span"),
+          el("span"),
+          el("span")
+        ),
+        el("span", { text: choice.label })
+      );
+      wrap.appendChild(input);
+      wrap.appendChild(label);
+      mount.appendChild(wrap);
+    });
+  }
+
+  function loadTheme() {
+    try {
+      const theme = localStorage.getItem(THEME_KEY);
+      return THEMES.includes(theme) ? theme : "sage";
+    } catch (error) {
+      return "sage";
+    }
+  }
+
+  function renderSection(section) {
+    const sectionEl = el("section", { class: "section", id: "section-" + section.id });
+    const head = el("div", { class: "section-head" },
+      el("div", { class: "section-kicker" },
+        el("span", { text: section.kicker }),
+        section.emphasis ? el("strong", { text: section.emphasis }) : null
+      ),
+      el("h2", { text: section.title }),
+      el("p", { class: "section-intro", text: section.intro })
+    );
+    sectionEl.appendChild(head);
+
+    const grid = el("div", { class: "field-grid" });
+    section.fields.forEach((field) => {
+      if (field.row) {
+        const shown = field.row.filter((subField) => visibleField(subField, section.id));
+        if (!shown.length) return;
+        const rowClass = shown.length === 3 ? "row-3" : "row-2";
+        const row = el("div", { class: rowClass });
+        shown.forEach((subField) => row.appendChild(renderField(section.id, subField)));
+        grid.appendChild(row);
+      } else if (visibleField(field, section.id)) {
+        grid.appendChild(renderField(section.id, field));
+      }
+    });
+    sectionEl.appendChild(grid);
+    return sectionEl;
+  }
+
+  function inputId(sectionId, fieldId, suffix) {
+    return [sectionId, fieldId, suffix].filter(Boolean).join("--");
+  }
+
+  function renderField(sectionId, field) {
+    const wrap = el("div", { class: "field" });
+    const stateSectionId = fieldSectionId(sectionId, field);
+    const currentValue = getValue(stateSectionId, field.id);
+
+    if (field.type === "text" || field.type === "date" || field.type === "time" || field.type === "number") {
+      const id = inputId(stateSectionId, field.id);
+      wrap.appendChild(el("label", { for: id, text: field.label }));
+      if (field.hint) wrap.appendChild(el("div", { class: "hint", text: field.hint }));
+      const input = el("input", {
+        id,
+        type: field.type,
+        placeholder: field.placeholder || ""
+      });
+      input.value = currentValue || "";
+      input.addEventListener("input", () => setValue(stateSectionId, field.id, input.value));
+      wrap.appendChild(input);
+      return wrap;
+    }
+
+    if (field.type === "textarea") {
+      const id = inputId(stateSectionId, field.id);
+      wrap.appendChild(el("label", { for: id, text: field.label }));
+      if (field.hint) wrap.appendChild(el("div", { class: "hint", text: field.hint }));
+      const textarea = el("textarea", {
+        id,
+        rows: field.rows || 4,
+        placeholder: field.placeholder || ""
+      });
+      textarea.value = currentValue || "";
+      textarea.addEventListener("input", () => setValue(stateSectionId, field.id, textarea.value));
+      wrap.appendChild(textarea);
+      return wrap;
+    }
+
+    if (field.type === "multiline_list") {
+      const id = inputId(stateSectionId, field.id);
+      wrap.appendChild(el("label", { for: id, text: field.label }));
+      if (field.hint) wrap.appendChild(el("div", { class: "hint", text: field.hint }));
+      const textarea = el("textarea", {
+        id,
+        rows: field.rows || 5,
+        placeholder: "One item per line"
+      });
+      textarea.value = Array.isArray(currentValue) ? currentValue.join("\n") : "";
+      textarea.addEventListener("input", () => {
+        const items = textarea.value
+          .split("\n")
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .slice(0, field.maxItems || 999);
+        setValue(stateSectionId, field.id, items);
+      });
+      wrap.appendChild(textarea);
+      return wrap;
+    }
+
+    if (field.type === "radio" || field.type === "checkboxes" || field.type === "rating" || field.type === "theme_picker") {
+      const fieldset = el("fieldset", { class: "fieldset" });
+      fieldset.appendChild(el("legend", { text: field.label }));
+      if (field.hint) fieldset.appendChild(el("div", { class: "hint", text: field.hint }));
+      const stackClass = field.type === "theme_picker" ? "theme-radio-stack" : "pill-stack" + (field.type === "rating" ? " rating-stack" : "");
+      const stack = el("div", { class: stackClass });
+      const selectedSet = field.type === "checkboxes" ? new Set(Array.isArray(currentValue) ? currentValue : []) : null;
+      const ratingScale = field.scale || [];
+      const options = field.type === "rating" ? ratingScale : field.options;
+
+      options.forEach((option, index) => {
+        const optionValue = typeof option === "object" ? option.value : option;
+        const optionLabel = typeof option === "object" ? option.label : option;
+        const id = inputId(stateSectionId, field.id, String(index));
+        const labelNode = el("label", { for: id });
+        const input = el("input", {
+          type: field.type === "checkboxes" ? "checkbox" : "radio",
+          id,
+          name: field.type === "checkboxes" ? id : inputId(stateSectionId, field.id, "group"),
+          value: String(optionValue)
+        });
+        if (field.type === "checkboxes") input.checked = selectedSet.has(optionValue);
+        else input.checked = currentValue === optionValue;
+        input.addEventListener("change", () => {
+          if (field.type === "checkboxes") {
+            const next = new Set(Array.isArray(getValue(stateSectionId, field.id)) ? getValue(stateSectionId, field.id) : []);
+            if (input.checked) next.add(optionValue);
+            else next.delete(optionValue);
+            setValue(stateSectionId, field.id, Array.from(next));
+          } else {
+            setValue(stateSectionId, field.id, optionValue);
+            if (field.type === "theme_picker") applyTheme(optionValue);
+            if (fieldHasDependents(sectionId, field.id)) renderAll();
+          }
+        });
+        let visualBits = null;
+        if (field.type === "theme_picker") {
+          const swatch = el("span", { class: "theme-swatch", "aria-hidden": "true" },
+            el("span"),
+            el("span"),
+            el("span")
+          );
+          visualBits = swatch;
+        }
+        labelNode.appendChild(input);
+        labelNode.appendChild(el("span", { class: "pill-label", "data-theme": String(optionValue).toLowerCase() },
+          el("span", { class: "pill-check", "aria-hidden": "true", text: "✓" }),
+          visualBits,
+          el("span", { class: "pill-copy" }, el("span", { text: String(optionLabel) }))
+        ));
+        stack.appendChild(labelNode);
+      });
+
+      fieldset.appendChild(stack);
+      wrap.appendChild(fieldset);
+      return wrap;
+    }
+
+    if (field.type === "multiselect_with_text") {
+      const fieldset = el("fieldset", { class: "fieldset" });
+      fieldset.appendChild(el("legend", { text: field.label }));
+      const stack = el("div", { class: "pill-stack checklist-list" });
+      const selected = Array.isArray(currentValue && currentValue.selected) ? currentValue.selected : [];
+      field.options.forEach((option, index) => {
+        const id = inputId(stateSectionId, field.id, String(index));
+        const labelNode = el("label", { for: id });
+        const input = el("input", {
+          type: "checkbox",
+          id,
+          name: id,
+          value: option
+        });
+        input.checked = selected.includes(option);
+        input.addEventListener("change", () => {
+          const now = new Set(Array.isArray((getValue(stateSectionId, field.id) || {}).selected) ? (getValue(stateSectionId, field.id) || {}).selected : []);
+          if (input.checked) now.add(option);
+          else now.delete(option);
+          const existing = getValue(stateSectionId, field.id) || {};
+          setValue(stateSectionId, field.id, { selected: Array.from(now), extra: existing.extra || "" });
+        });
+        labelNode.appendChild(input);
+        labelNode.appendChild(el("span", { class: "pill-label" },
+          el("span", { class: "pill-check", "aria-hidden": "true", text: "✓" }),
+          el("span", { class: "pill-copy" }, el("span", { text: option }))
+        ));
+        stack.appendChild(labelNode);
+      });
+      fieldset.appendChild(stack);
+      wrap.appendChild(fieldset);
+      const extraId = inputId(stateSectionId, field.id, "extra");
+      wrap.appendChild(el("label", { for: extraId, class: "inline-extra", text: field.extraLabel }));
+      const extraInput = el("input", { id: extraId, type: "text", placeholder: field.extraPlaceholder || "" });
+      extraInput.value = currentValue && currentValue.extra ? currentValue.extra : "";
+      extraInput.addEventListener("input", () => {
+        const existing = getValue(stateSectionId, field.id) || {};
+        setValue(stateSectionId, field.id, { selected: existing.selected || [], extra: extraInput.value });
+      });
+      wrap.appendChild(extraInput);
+      return wrap;
+    }
+
+    if (field.type === "repeater") {
+      wrap.appendChild(el("div", { text: field.label }));
+      const rows = Array.isArray(currentValue) ? currentValue : [];
+      const repeater = el("div", { class: "repeater" });
+      rows.forEach((rowValue, rowIndex) => {
+        const row = el("div", { class: "repeater-row cols-" + field.columns.length });
+        field.columns.forEach((column) => {
+          const cell = el("div");
+          const cellId = inputId(stateSectionId, field.id, rowIndex + "-" + column.id);
+          cell.appendChild(el("label", { class: "mini-label", for: cellId, text: column.label }));
+          const input = el("input", {
+            id: cellId,
+            type: column.type || "text",
+            placeholder: column.placeholder || ""
+          });
+          input.value = rowValue[column.id] || "";
+          input.addEventListener("input", () => {
+            const live = getValue(stateSectionId, field.id);
+            const nextRows = Array.isArray(live) ? live.slice() : rows.slice();
+            nextRows[rowIndex] = Object.assign({}, nextRows[rowIndex], { [column.id]: input.value });
+            getSectionState(stateSectionId)[field.id] = nextRows;
+            debouncedSave();
+            updateProgress();
+          });
+          cell.appendChild(input);
+          row.appendChild(cell);
+        });
+        const removeButton = el("button", {
+          type: "button",
+          class: "icon-button",
+          "aria-label": "Remove this row",
+          text: "×",
+          onclick: () => {
+            const live = getValue(stateSectionId, field.id);
+            const nextRows = Array.isArray(live) ? live.slice() : rows.slice();
+            nextRows.splice(rowIndex, 1);
+            if (nextRows.length === 0) delete getSectionState(stateSectionId)[field.id];
+            else getSectionState(stateSectionId)[field.id] = nextRows;
+            debouncedSave();
+            updateProgress();
+            renderAll();
+          }
+        });
+        row.appendChild(removeButton);
+        repeater.appendChild(row);
+      });
+      const actions = el("div", { class: "repeater-actions" });
+      actions.appendChild(el("div", { class: "hint", text: rows.length + " of " + field.cap + " used" }));
+      const addButton = el("button", {
+        type: "button",
+        class: "button",
+        text: field.addLabel,
+        onclick: () => {
+          const live = getValue(stateSectionId, field.id);
+          const cur = Array.isArray(live) ? live.slice() : rows.slice();
+          if (cur.length >= field.cap) return;
+          const nextRow = {};
+          field.columns.forEach((column) => { nextRow[column.id] = ""; });
+          getSectionState(stateSectionId)[field.id] = cur.concat(nextRow);
+          debouncedSave();
+          updateProgress();
+          renderAll();
+        }
+      });
+      if (rows.length >= field.cap) addButton.disabled = true;
+      actions.appendChild(addButton);
+      repeater.appendChild(actions);
+      wrap.appendChild(repeater);
+      return wrap;
+    }
+
+    return wrap;
+  }
+
+  function renderAll() {
+    const shell = document.getElementById("formShell");
+    shell.innerHTML = "";
+    SECTIONS.forEach((section) => shell.appendChild(renderSection(section)));
+    updateProgress();
+    wireButtons();
+  }
+
+  function fieldHasDependents(sectionId, fieldId) {
+    const section = SECTIONS.find((entry) => entry.id === sectionId);
+    if (!section) return false;
+    return section.fields.some((field) => {
+      if (field.row) return field.row.some((subField) => subField.showWhen && subField.showWhen.field === fieldId);
+      return field.showWhen && field.showWhen.field === fieldId;
+    });
+  }
+
+  function wireButtons() {
+    document.getElementById("downloadTop").onclick = generateAllExports;
+    document.getElementById("downloadBottom").onclick = generateAllExports;
+    document.getElementById("clearButton").onclick = () => {
+      if (window.confirm("Start over and clear every saved answer?")) clearAllAnswers();
+    };
+  }
+
+  function fieldUniverseEntry(field) {
+    const options = field.type === "rating"
+      ? field.scale || []
+      : field.type === "repeater"
+        ? field.columns.map((column) => ({ id: column.id, label: column.label, type: column.type || "text" }))
+        : (field.options || []);
+    return {
+      type: field.type,
+      options,
+      drives: field.drives
+    };
+  }
+
+  function buildFieldUniverse() {
+    const universe = {};
+    SECTIONS.forEach((section) => {
+      section.fields.forEach((field) => {
+        if (field.row) {
+          field.row.forEach((subField) => {
+            universe[fieldPath(section.id, subField)] = fieldUniverseEntry(subField);
+          });
+        } else {
+          universe[fieldPath(section.id, field)] = fieldUniverseEntry(field);
+        }
+      });
+    });
+    return universe;
+  }
+
+  function serializeFieldValue(field, value) {
+    if (!valueIsFilled(value)) return "";
+    if (field.type === "multiline_list") return Array.isArray(value) ? value.slice(0, field.maxItems || value.length) : [];
+    if (field.type === "multiselect_with_text") return { selected: value.selected || [], extra: value.extra || "" };
+    if (field.type === "repeater") return (Array.isArray(value) ? value : []).filter((row) => Object.values(row || {}).some(valueIsFilled));
+    return value;
+  }
+
+  function buildFieldsPayload() {
+    const payload = {};
+    SECTIONS.forEach((section) => {
+      section.fields.forEach((field) => {
+        if (field.row) {
+          field.row.forEach((subField) => {
+            if (!visibleField(subField, section.id)) return;
+            payload[fieldPath(section.id, subField)] = serializeFieldValue(subField, getValue(fieldSectionId(section.id, subField), subField.id));
+          });
+        } else {
+          if (!visibleField(field, section.id)) return;
+          payload[fieldPath(section.id, field)] = serializeFieldValue(field, getValue(fieldSectionId(section.id, field), field.id));
+        }
+      });
+    });
+    return payload;
+  }
+
+  function markdownForValue(field, rawValue) {
+    if (!valueIsFilled(rawValue)) return null;
+    if (field.type === "multiline_list") return rawValue.join("\n").split("\n").map((line) => "- " + line).join("\n");
+    if (field.type === "checkboxes") return rawValue.map((item) => "- " + item).join("\n");
+    if (field.type === "multiselect_with_text") {
+      const parts = [];
+      if (Array.isArray(rawValue.selected) && rawValue.selected.length) parts.push(rawValue.selected.map((item) => "- " + item).join("\n"));
+      if (rawValue.extra && rawValue.extra.trim()) parts.push("- Anything else: " + rawValue.extra.trim());
+      return parts.join("\n");
+    }
+    if (field.type === "repeater") {
+      return rawValue
+        .filter((row) => Object.values(row || {}).some(valueIsFilled))
+        .map((row, index) => {
+          const detail = field.columns
+            .map((column) => row[column.id] ? column.label + ": " + row[column.id] : null)
+            .filter(Boolean)
+            .join(" | ");
+          return (index + 1) + ". " + detail;
+        })
+        .join("\n");
+    }
+    if (Array.isArray(rawValue)) return rawValue.map((item) => "- " + item).join("\n");
+    if (typeof rawValue === "object") return JSON.stringify(rawValue);
+    return String(rawValue);
+  }
+
+  function buildMarkdown(forClaude) {
+    const lines = [];
+    lines.push("# Max setup intake");
+    lines.push("");
+    lines.push("_Completed " + new Date().toISOString() + "_");
+    lines.push("");
+    SECTIONS.forEach((section, sectionIndex) => {
+      lines.push("## " + (sectionIndex + 1) + ". " + section.title);
+      if (forClaude) lines.push("<!-- section: " + section.id + " -->");
+      lines.push("");
+      let sectionHasAnswer = false;
+      section.fields.forEach((field) => {
+        if (field.row) {
+          field.row.forEach((subField) => {
+            if (!visibleField(subField, section.id)) return;
+            const raw = getValue(fieldSectionId(section.id, subField), subField.id);
+            const rendered = markdownForValue(subField, serializeFieldValue(subField, raw));
+            if (!rendered) return;
+            sectionHasAnswer = true;
+            lines.push("**" + subField.label + "**" + (forClaude ? " <!-- field: " + fieldPath(section.id, subField) + " -->" : ""));
+            lines.push(rendered);
+            lines.push("");
+          });
+          return;
+        }
+        if (!visibleField(field, section.id)) return;
+        const raw = getValue(fieldSectionId(section.id, field), field.id);
+        const rendered = markdownForValue(field, serializeFieldValue(field, raw));
+        if (!rendered) return;
+        sectionHasAnswer = true;
+        lines.push("**" + field.label + "**" + (forClaude ? " <!-- field: " + fieldPath(section.id, field) + " -->" : ""));
+        lines.push(rendered);
+        lines.push("");
+      });
+      if (!sectionHasAnswer) {
+        lines.push("_No answers in this section._");
+        lines.push("");
+      }
+    });
+    return lines.join("\n");
+  }
+
+  function buildJson() {
+    return {
+      intake_id: "max-setup-dashboard-2026-05-28",
+      recipient: "Max",
+      artifact_target: "setup-package + dashboard",
+      wave: 1,
+      completed_at: new Date().toISOString(),
+      fields: buildFieldsPayload(),
+      field_universe: buildFieldUniverse()
+    };
+  }
+
+  function downloadFile(filename, content, mime) {
+    const blob = new Blob([content], { type: mime + ";charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = filename;
+    document.body.appendChild(anchor);
+    anchor.click();
+    setTimeout(() => {
+      document.body.removeChild(anchor);
+      URL.revokeObjectURL(url);
+    }, 200);
+  }
+
+  function generateAllExports() {
+    persistState();
+    const clean = buildMarkdown(false);
+    const claude = buildMarkdown(true);
+    const json = buildJson();
+    downloadFile("max-setup-intake-clean.md", clean, "text/markdown");
+    setTimeout(() => downloadFile("max-setup-intake-claude.md", claude, "text/markdown"), 240);
+    setTimeout(() => downloadFile("max-setup-intake.json", JSON.stringify(json, null, 2), "application/json"), 480);
+    toast("Downloaded clean markdown, Claude markdown, and JSON.");
+  }
+
+  function toast(message) {
+    const node = document.getElementById("toast");
+    node.textContent = message;
+    node.classList.add("show");
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => node.classList.remove("show"), 2400);
+  }
+
+  function loadSavedState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return parsed && parsed.state ? parsed : null;
+    } catch (error) {
+      console.warn("load failed", error);
+      return null;
+    }
+  }
+
+  function showResumeModal(saved) {
+    pendingDraft = saved;
+    const modal = document.getElementById("resumeModal");
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function hideResumeModal() {
+    const modal = document.getElementById("resumeModal");
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  function loadDraftIntoState(saved) {
+    Object.keys(STATE).forEach((key) => delete STATE[key]);
+    Object.entries(saved.state || {}).forEach(([sectionId, values]) => {
+      STATE[sectionId] = values;
+    });
+    applyTheme((saved.state && saved.state.pref && saved.state.pref.base_theme) || loadTheme(), { persistDraft: false });
+    updateSaveStatus(saved.savedAt ? formatSavedTime(saved.savedAt) : "restored");
+  }
+
+  function setupResumeFlow() {
+    const saved = loadSavedState();
+    if (saved && hasPersistedContent(saved.state)) {
+      showResumeModal(saved);
+    } else {
+      updateSaveStatus("Not saved yet");
+    }
+    document.getElementById("resumeContinue").addEventListener("click", () => {
+      if (pendingDraft) loadDraftIntoState(pendingDraft);
+      hideResumeModal();
+      renderAll();
+      toast("Restored your saved answers.");
+    });
+    document.getElementById("resumeReset").addEventListener("click", () => {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (error) {
+        console.warn("reset failed", error);
+      }
+      pendingDraft = null;
+      hideResumeModal();
+      clearAllAnswers();
+    });
+  }
+
+  function init() {
+    setValueSilently("pref", "base_theme", loadTheme());
+    renderThemeSwitcher();
+    applyTheme(loadTheme(), { persistDraft: false });
+    renderAll();
+    setupResumeFlow();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
