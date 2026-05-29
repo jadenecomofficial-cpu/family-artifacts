@@ -91,6 +91,9 @@
     --accent: #6f8d72;
     --accent-strong: #5d765f;
     --accent-soft: #e8efe8;
+    --accent-2: #bfae8e;
+    --grad-start: #8aa98d;
+    --grad-end: #4d6a54;
     --focus: rgba(79, 108, 85, 0.24);
     --shadow: 0 12px 28px rgba(48, 54, 45, 0.08);
     --radius: 14px;
@@ -120,6 +123,9 @@
     --accent: #2563eb;
     --accent-strong: #6366f1;
     --accent-soft: rgba(37, 99, 235, 0.14);
+    --accent-2: #6366f1;
+    --grad-start: #93c5fd;
+    --grad-end: #1e40af;
     --focus: rgba(99, 102, 241, 0.22);
     --shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
     --radius: 0.375rem;
@@ -152,6 +158,9 @@
     --accent: #a855f7;
     --accent-strong: #c084fc;
     --accent-soft: rgba(80, 35, 120, 0.5);
+    --accent-2: #c084fc;
+    --grad-start: #e9d5ff;
+    --grad-end: #7c3aed;
     --focus: rgba(168, 85, 247, 0.24);
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.08);
     --radius: 1.5rem;
@@ -185,6 +194,9 @@
     --accent: #a855f7;
     --accent-strong: #ec4899;
     --accent-soft: rgba(168, 85, 247, 0.12);
+    --accent-2: #ec4899;
+    --grad-start: #d8b4fe;
+    --grad-end: #db2777;
     --focus: rgba(129, 140, 248, 0.28);
     --shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
     --display-font: "Fraunces", Georgia, serif;
@@ -213,6 +225,9 @@
     --accent: #06b6d4;
     --accent-strong: #22d3ee;
     --accent-soft: rgba(12, 38, 50, 0.9);
+    --accent-2: #22d3ee;
+    --grad-start: #67e8f9;
+    --grad-end: #0e7490;
     --focus: rgba(34, 211, 238, 0.22);
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.55), 0 0 30px rgba(6, 182, 212, 0.1);
     --radius: 1.25rem;
@@ -243,6 +258,9 @@
     --accent: #4f46e5;
     --accent-strong: #4338ca;
     --accent-soft: #e0e7ff;
+    --accent-2: #f43f5e;
+    --grad-start: #4f46e5;
+    --grad-end: #f43f5e;
     --focus: rgba(79, 70, 229, 0.16);
     --shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
     --radius: 0.375rem;
@@ -273,6 +291,9 @@
     --accent: #0a66c2;
     --accent-strong: #0856a3;
     --accent-soft: #eaf3fc;
+    --accent-2: #2b88d8;
+    --grad-start: #50a0e8;
+    --grad-end: #0856a3;
     --focus: rgba(10, 102, 194, 0.18);
     --shadow: none;
     --radius: 5px;
@@ -302,6 +323,9 @@
     --accent: #1e7a47;
     --accent-strong: #18623a;
     --accent-soft: #e6f3ea;
+    --accent-2: #2ea566;
+    --grad-start: #4cb87d;
+    --grad-end: #18623a;
     --focus: rgba(30, 122, 71, 0.18);
     --shadow: none;
     --radius: 2px;
@@ -334,6 +358,9 @@
     --accent: #ef4444;
     --accent-strong: #f43f5e;
     --accent-soft: #281216;
+    --accent-2: #f43f5e;
+    --grad-start: #fda4af;
+    --grad-end: #b91c1c;
     --focus: rgba(239, 68, 68, 0.24);
     --shadow: -4px -4px 10px rgba(255, 255, 255, 0.025), 6px 6px 16px rgba(0, 0, 0, 0.85);
     --display-font: "Manrope", "Inter", system-ui, sans-serif;
@@ -362,6 +389,9 @@
     --accent: #8b5cf6;
     --accent-strong: #f43f5e;
     --accent-soft: #ede9fe;
+    --accent-2: #f43f5e;
+    --grad-start: #8b5cf6;
+    --grad-end: #f43f5e;
     --focus: rgba(244, 63, 94, 0.18);
     --shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
     --radius: 0.75rem;
@@ -394,6 +424,9 @@
     --accent: #d97706;
     --accent-strong: #ea580c;
     --accent-soft: #fef3c7;
+    --accent-2: #ea580c;
+    --grad-start: #f59e0b;
+    --grad-end: #b91c1c;
     --focus: rgba(217, 119, 6, 0.14);
     --shadow: 0 2px 6px rgba(120, 70, 30, 0.06);
     --radius: 1rem;
@@ -426,6 +459,9 @@
     --accent: #f97316;
     --accent-strong: #fb7185;
     --accent-soft: rgba(249, 115, 22, 0.14);
+    --accent-2: #fb7185;
+    --grad-start: #fbbf24;
+    --grad-end: #f43f5e;
     --focus: rgba(251, 113, 133, 0.24);
     --shadow: 0 18px 44px rgba(13, 6, 16, 0.42);
     --radius: 0.9rem;
@@ -1092,6 +1128,189 @@
     transform: translateY(0);
   }
 
+  .hero-card,
+  .section,
+  .savebar {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before,
+  .section::before,
+  .savebar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+  }
+
+  .hero-card::before {
+    height: 4px;
+  }
+
+  .section::before {
+    height: 3px;
+  }
+
+  .savebar::before {
+    height: 2px;
+  }
+
+  .section-head {
+    padding-bottom: 10px;
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, var(--accent) 22%);
+  }
+
+  .eyebrow,
+  .section-kicker,
+  .section-kicker strong {
+    color: var(--accent-strong);
+  }
+
+  .section h2 {
+    color: var(--ink);
+    border-left: 3px solid var(--accent-strong);
+    padding-left: 12px;
+  }
+
+  .field label,
+  .field legend {
+    color: var(--ink);
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .field label::before,
+  .field legend::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-soft) 72%, transparent);
+  }
+
+  .fieldset {
+    padding-left: 12px;
+    border-left: 2px solid color-mix(in srgb, var(--accent) 45%, var(--line) 55%);
+  }
+
+  .pill-stack,
+  .theme-radio-stack {
+    gap: 12px;
+  }
+
+  .pill-stack .pill-label,
+  .theme-radio-stack .pill-label {
+    border-color: color-mix(in srgb, var(--line) 72%, var(--accent) 28%);
+  }
+
+  .pill-stack input:checked + .pill-label,
+  .theme-radio-stack input:checked + .pill-label {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  .pill-check {
+    border-color: color-mix(in srgb, var(--line-strong) 72%, var(--accent) 28%);
+    background: color-mix(in srgb, var(--panel) 82%, var(--accent-soft) 18%);
+  }
+
+  .pill-stack input:checked + .pill-label .pill-check,
+  .theme-radio-stack input:checked + .pill-label .pill-check {
+    color: #fff;
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-soft) 72%, transparent);
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select {
+    border-color: color-mix(in srgb, var(--line) 76%, var(--accent) 24%);
+  }
+
+  input:focus,
+  input:focus-visible,
+  textarea:focus,
+  textarea:focus-visible,
+  select:focus,
+  select:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--focus);
+  }
+
+  .progress-chip {
+    border-color: color-mix(in srgb, var(--line) 72%, var(--accent) 28%);
+    background: color-mix(in srgb, var(--panel) 84%, var(--accent-soft) 16%);
+  }
+
+  .progress-chip strong {
+    color: var(--accent-strong);
+  }
+
+  .theme-trigger-caret {
+    color: var(--accent);
+  }
+
+  .button {
+    border-color: color-mix(in srgb, var(--accent-soft) 72%, var(--line) 28%);
+  }
+
+  .button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent-soft) 76%, var(--panel) 24%);
+  }
+
+  .button.primary {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: #fff;
+  }
+
+  .hero-note {
+    border-left: 3px solid var(--accent);
+    background: color-mix(in srgb, var(--panel-2) 82%, var(--accent-soft) 18%);
+  }
+
+  .hero-note strong {
+    color: var(--accent-strong);
+  }
+
+  .theme-menu-option:hover {
+    background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--line) 45%);
+  }
+
+  .theme-menu-option[aria-checked="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .theme-menu-check {
+    color: var(--accent);
+  }
+
+  .savebar {
+    border-top: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+
+  a {
+    color: var(--accent-strong);
+  }
+
   :root.theme-midnight .button.primary:hover,
   :root.theme-violet .button.primary:hover,
   :root.theme-glass .button.primary:hover,
@@ -1671,19 +1890,28 @@
     color: #d97706;
   }
 
+  /* Aurora headings: solid ink (canonical fidelity — canonical aurora keeps
+     headings dark + puts the gradient on surfaces, not text). The prior
+     gradient-clip made headings transparent + put gradient text on gradient
+     buttons. */
   :root.theme-aurora h1,
   :root.theme-aurora h2,
-  :root.theme-aurora h3,
-  :root.theme-aurora .button.primary span,
-  :root.theme-aurora .pill-stack input:checked + .pill-label .pill-copy,
-  :root.theme-aurora .theme-radio-stack input:checked + .pill-label .pill-copy {
+  :root.theme-aurora h3 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 700;
     letter-spacing: -0.025em;
-    background: linear-gradient(90deg, #8b5cf6 0%, #f43f5e 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    color: var(--ink);
+    -webkit-text-fill-color: var(--ink);
+  }
+  /* Aurora button + checked-pill text sit ON the gradient fill → solid white */
+  :root.theme-aurora .button.primary span,
+  :root.theme-aurora .pill-stack input:checked + .pill-label .pill-copy,
+  :root.theme-aurora .theme-radio-stack input:checked + .pill-label .pill-copy {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
   }
 
   :root.theme-aurora .hero-card,
@@ -1850,6 +2078,32 @@
   :root.theme-sunset .pill-stack input:checked + .pill-label,
   :root.theme-sunset .theme-radio-stack input:checked + .pill-label {
     box-shadow: 0 0 0 1px rgba(251, 113, 133, 0.3), 0 0 24px rgba(249, 115, 22, 0.24);
+  }
+
+  /* ---- accent-TEXT contrast calibration (WCAG >=4.5 for small accent labels).
+     Decorative strips/borders/fills keep the vivid accent; only accent TEXT
+     shifts to a shade clearing 4.5 on each theme's bg. Measured pre-fix:
+     midnight 4.03, aurora 3.67, solar 3.47 -> post-fix ~7.2 / ~7.1 / ~5.1. ---- */
+  :root.theme-midnight .eyebrow,
+  :root.theme-midnight .section-kicker,
+  :root.theme-midnight .section-kicker strong,
+  :root.theme-midnight .progress-chip strong,
+  :root.theme-midnight a {
+    color: #60a5fa;
+  }
+  :root.theme-aurora .eyebrow,
+  :root.theme-aurora .section-kicker,
+  :root.theme-aurora .section-kicker strong,
+  :root.theme-aurora .progress-chip strong,
+  :root.theme-aurora a {
+    color: #6d28d9;
+  }
+  :root.theme-solar .eyebrow,
+  :root.theme-solar .section-kicker,
+  :root.theme-solar .section-kicker strong,
+  :root.theme-solar .progress-chip strong,
+  :root.theme-solar a {
+    color: #c2410c;
   }
 </style>
 </head>
