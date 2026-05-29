@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Max setup intake</title>
+<title>Max's Intake Form</title>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -757,6 +757,7 @@
     font-size: clamp(2rem, 4.5vw, 3.65rem);
     letter-spacing: -0.01em;
     margin-bottom: 16px;
+    color: var(--accent);
   }
 
   .hero-grid {
@@ -1128,40 +1129,12 @@
     transform: translateY(0);
   }
 
-  .hero-card,
-  .section,
-  .savebar {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-card::before,
-  .section::before,
-  .savebar::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    pointer-events: none;
-    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
-  }
-
-  .hero-card::before {
-    height: 4px;
-  }
-
-  .section::before {
-    height: 3px;
-  }
-
-  .savebar::before {
-    height: 2px;
-  }
-
+  /* No decorative top-strips or side-bars on cards / boxes / textboxes —
+     canonical home base keeps lines minimal and never at the top of a box.
+     Accent lives in the h1, kickers, active/selected states, and buttons. */
   .section-head {
     padding-bottom: 10px;
-    border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, var(--accent) 22%);
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 84%, var(--accent) 16%);
   }
 
   .eyebrow,
@@ -1172,33 +1145,11 @@
 
   .section h2 {
     color: var(--ink);
-    border-left: 4px solid var(--accent-strong);
-    padding-left: 13px;
   }
 
   .field label,
   .field legend {
     color: var(--ink);
-    position: relative;
-    padding-left: 14px;
-  }
-
-  .field label::before,
-  .field legend::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-soft) 72%, transparent);
-  }
-
-  .fieldset {
-    padding-left: 12px;
-    border-left: 2px solid color-mix(in srgb, var(--accent) 45%, var(--line) 55%);
   }
 
   .pill-stack,
@@ -1585,18 +1536,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
   }
 
-  :root.theme-midnight .hero-card::before,
-  :root.theme-midnight .section::before,
-  :root.theme-midnight .modal::before,
-  :root.theme-midnight .savebar::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 1px;
-    background: #2563eb;
-    box-shadow: 0 0 8px rgba(37, 99, 235, 0.55);
-    pointer-events: none;
-  }
+  /* midnight top-strip removed — no decorative lines at the top of boxes */
 
   :root.theme-midnight input[type="text"],
   :root.theme-midnight input[type="number"],
@@ -1855,17 +1795,7 @@
     box-shadow: 0 2px 6px rgba(120, 70, 30, 0.06);
   }
 
-  :root.theme-solar .hero-card::before,
-  :root.theme-solar .section::before,
-  :root.theme-solar .modal::before,
-  :root.theme-solar .savebar::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 4px;
-    background: linear-gradient(90deg, #f59e0b 0%, #ea580c 55%, #dc2626 100%);
-    pointer-events: none;
-  }
+  /* solar top-strip removed — no decorative lines at the top of boxes */
 
   :root.theme-solar .button.primary,
   :root.theme-solar .pill-stack input:checked + .pill-label,
@@ -1905,11 +1835,21 @@
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 700;
     letter-spacing: -0.025em;
+  }
+  /* aurora section/card titles stay ink; only the hero h1 carries the
+     multicolor rainbow gradient (canonical aurora signature). */
+  :root.theme-aurora h2,
+  :root.theme-aurora h3 {
     background: none;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
     color: var(--ink);
     -webkit-text-fill-color: var(--ink);
+  }
+  :root.theme-aurora h1 {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6, #f43f5e, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
   /* Aurora button + checked-pill text sit ON the gradient fill → solid white */
   :root.theme-aurora .button.primary span,
@@ -2136,6 +2076,20 @@
      menu ~13000px off-screen in Safari → "theme button stops working after the
      4th theme." This invariant prevents any recurrence. */
   .theme-menu { position: fixed !important; }
+
+  /* Per-theme hero h1 color (canonical map). Base h1 { color: var(--accent) }
+     makes most themes' h1 accent-colored (obsidian red, solar orange, violet,
+     electric cyan, sage green, excel green, outlook blue, sunset orange).
+     Exceptions, matching the live home base: */
+  :root.theme-midnight h1 { color: var(--ink); }   /* canonical midnight: white */
+  :root.theme-glass h1 { color: var(--ink); }       /* canonical glass: white + glow */
+  :root.theme-paper h1 {                             /* canonical paper: indigo->rose gradient */
+    background: linear-gradient(90deg, #4f46e5, #f43f5e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 </style>
 </head>
 <body>
@@ -2162,10 +2116,10 @@
     <header class="hero">
       <div class="hero-card">
         <div class="eyebrow">Setup Intake</div>
-        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v8 (prominent selected-state accent)</div>
+        <div class="build-stamp" title="build version — confirms you're on the current live file">build 2026-05-29 · weave-v9 (canonical h1 + minimal lines)</div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1>Max’s dashboard + Claude setup, before the call.</h1>
+            <h1>Max’s Intake Form</h1>
             <p>This sets up your dashboard and your Claude before our call. It should take about 20–25 minutes, saves as you go, and the more specific you are here, the more dialed-in the first build can be.</p>
             <p>You can switch the design theme near the top of the form or from the savebar at any point. Nothing here is fragile; if you stop midway, your place and answers will still be here when you come back.</p>
           </div>
