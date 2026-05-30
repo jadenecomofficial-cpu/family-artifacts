@@ -2081,14 +2081,43 @@
      those themes. This invariant prevents recurrence across all 11 themes. */
   .savebar { position: sticky !important; top: 0 !important; }
 
-  /* Per-theme hero h1 color (canonical map). Base h1 { color: var(--accent) }
-     makes most themes' h1 accent-colored (obsidian red, solar orange, violet,
-     electric cyan, sage green, excel green, outlook blue, sunset orange).
-     Exceptions, matching the live home base: */
-  :root.theme-midnight h1 { color: var(--ink); }   /* canonical midnight: white */
-  :root.theme-glass h1 { color: var(--ink); }       /* canonical glass: white + glow */
-  :root.theme-obsidian h1 { color: #dc2626; }       /* deep crimson (canonical Home Base h1 starts here); was pastel #ef4444 */
-  :root.theme-paper h1 { color: #4f46e5; }           /* SOLID indigo — mono/flat, distinct from aurora's rainbow gradient */
+  /* ============================================================
+     Display heading "pop" — per-theme weight/tracking + gradient-clip fill,
+     transcribed from the live home base (tools/email-monitor/index.css) so
+     intake headings carry the same dimension as its Home Base / Inbox titles.
+     Hero h1 + section h2 clip a top->bottom grad-start -> grad-end fill;
+     glass/midnight stay solid ink, paper stays solid indigo (canonical map).
+     ============================================================ */
+  h1, h2 {
+    font-weight: var(--headline-weight, 700);
+    letter-spacing: var(--headline-tracking, -0.02em);
+    background-image: linear-gradient(180deg, var(--grad-start), var(--grad-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  /* per-theme headline weight + tracking (from home base index.css) */
+  :root.theme-sage     { --headline-weight: 500; --headline-tracking: -0.01em; }
+  :root.theme-glass    { --headline-weight: 700; --headline-tracking: -0.025em; }
+  :root.theme-obsidian { --headline-weight: 800; --headline-tracking: -0.04em; }
+  :root.theme-midnight { --headline-weight: 600; --headline-tracking: -0.01em; }
+  :root.theme-violet   { --headline-weight: 700; --headline-tracking: -0.025em; }
+  :root.theme-electric { --headline-weight: 700; --headline-tracking: -0.02em; }
+  :root.theme-paper    { --headline-weight: 800; --headline-tracking: -0.025em; }
+  :root.theme-solar    { --headline-weight: 600; --headline-tracking: -0.02em; }
+  :root.theme-excel    { --headline-weight: 700; --headline-tracking: -0.02em; }
+  :root.theme-outlook  { --headline-weight: 700; --headline-tracking: -0.02em; }
+  :root.theme-sunset   { --headline-weight: 700; --headline-tracking: -0.02em; }
+  /* solid (non-gradient) exceptions — canonical h1 treatment map */
+  :root.theme-midnight h1, :root.theme-midnight h2,
+  :root.theme-glass h1, :root.theme-glass h2 {
+    background-image: none; -webkit-text-fill-color: var(--ink); color: var(--ink);
+  }
+  :root.theme-glass h1 { text-shadow: 0 0 24px rgba(168, 85, 247, 0.30); }
+  :root.theme-paper h1, :root.theme-paper h2 {
+    background-image: none; -webkit-text-fill-color: #4f46e5; color: #4f46e5;
+  }
 </style>
 </head>
 <body>
