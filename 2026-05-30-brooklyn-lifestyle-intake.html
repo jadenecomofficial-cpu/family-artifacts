@@ -2091,11 +2091,9 @@
   h1, h2 {
     font-weight: var(--headline-weight, 700);
     letter-spacing: var(--headline-tracking, -0.02em);
-    background-image: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent), #000 18%));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent);
+    background-image: none;
   }
   /* per-theme headline weight + tracking (from home base index.css) */
   :root.theme-sage     { --headline-weight: 500; --headline-tracking: -0.01em; }
@@ -2109,17 +2107,19 @@
   :root.theme-excel    { --headline-weight: 700; --headline-tracking: -0.02em; }
   :root.theme-outlook  { --headline-weight: 700; --headline-tracking: -0.02em; }
   :root.theme-sunset   { --headline-weight: 700; --headline-tracking: -0.02em; }
-  /* per-theme TIGHT in-hue heading gradients (calibrated per bg — no wide
-     light->deep sweeps; obsidian stays RED not pink; light themes stay dark
-     enough for large-text contrast; sunset keeps its liked warm amber->rose). */
-  :root.theme-obsidian h1, :root.theme-obsidian h2 { background-image: linear-gradient(180deg, #dc2626, #a31c1c); }
-  :root.theme-violet   h1, :root.theme-violet h2   { background-image: linear-gradient(180deg, #a855f7, #7c3aed); }
-  :root.theme-electric h1, :root.theme-electric h2 { background-image: linear-gradient(180deg, #22d3ee, #0a7c91); }
-  :root.theme-sunset   h1, :root.theme-sunset h2   { background-image: linear-gradient(180deg, #fbbf24, #f43f5e); }
-  :root.theme-sage     h1, :root.theme-sage h2     { background-image: linear-gradient(180deg, #5d7a5f, #3f5645); }
-  :root.theme-solar    h1, :root.theme-solar h2    { background-image: linear-gradient(180deg, #c2410c, #9a3412); }
-  :root.theme-excel    h1, :root.theme-excel h2    { background-image: linear-gradient(180deg, #1e7a47, #155c34); }
-  :root.theme-outlook  h1, :root.theme-outlook h2  { background-image: linear-gradient(180deg, #0a66c2, #084d92); }
+  /* SOLID, definitive heading colours — no gradient (Jaden 2026-05-30: any
+     light-topped gradient reads "pastel-esque, like light red + bold in Google
+     Docs"). The pop is weight + saturation, not a sheen. Per-theme deepened
+     where the raw accent is too light / low-contrast on its bg.
+     ONLY sunset keeps a gradient (Jaden likes its warm amber->rose). */
+  :root.theme-obsidian h1, :root.theme-obsidian h2 { color: #dc2626; -webkit-text-fill-color: #dc2626; }
+  :root.theme-sage     h1, :root.theme-sage h2     { color: #415b48; -webkit-text-fill-color: #415b48; }
+  :root.theme-solar    h1, :root.theme-solar h2    { color: #c2410c; -webkit-text-fill-color: #c2410c; }
+  :root.theme-sunset   h1, :root.theme-sunset h2   {
+    background-image: linear-gradient(180deg, #fbbf24, #f43f5e);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
   /* solid (non-gradient) exceptions — canonical h1 treatment map */
   :root.theme-midnight h1, :root.theme-midnight h2,
   :root.theme-glass h1, :root.theme-glass h2 {
