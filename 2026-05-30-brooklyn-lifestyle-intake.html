@@ -1527,8 +1527,7 @@
   :root.theme-midnight .section,
   :root.theme-midnight .modal,
   :root.theme-midnight .hero-note,
-  :root.theme-midnight .repeater-row,
-  :root.theme-midnight .savebar {
+  :root.theme-midnight .repeater-row {
     position: relative;
     overflow: hidden;
     border-radius: 0.375rem;
@@ -1787,8 +1786,7 @@
   :root.theme-solar .section,
   :root.theme-solar .modal,
   :root.theme-solar .hero-note,
-  :root.theme-solar .repeater-row,
-  :root.theme-solar .savebar {
+  :root.theme-solar .repeater-row {
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
@@ -2076,6 +2074,12 @@
      menu ~13000px off-screen in Safari → "theme button stops working after the
      4th theme." This invariant prevents any recurrence. */
   .theme-menu { position: fixed !important; }
+
+  /* GUARD (load-bearing): the savebar is a sticky top bar. No per-theme rule
+     may change its position — midnight + solar swept it into a card group with
+     `position: relative`, which killed stickiness so the bar scrolled away on
+     those themes. This invariant prevents recurrence across all 11 themes. */
+  .savebar { position: sticky !important; top: 0 !important; }
 
   /* Per-theme hero h1 color (canonical map). Base h1 { color: var(--accent) }
      makes most themes' h1 accent-colored (obsidian red, solar orange, violet,
